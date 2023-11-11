@@ -1,7 +1,5 @@
 package com.gestaoCash.model.client;
 
-import java.util.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Table(name = "cliente")
 @Entity
-public class client {
+public class Client {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +21,7 @@ public class client {
   @Column(columnDefinition = "varchar(50)")
   private String nome;
 
-  private Date dataNascimento;
+  // private Date dataNascimento;
 
   @Column(columnDefinition = "varchar(11)")
   private String telefone;
@@ -39,6 +37,6 @@ public class client {
 
   // no momento essa foreign key está estatico, em breve será relacao entre
   // tabelas
-  private Long id_empresa;
+  // private Long id_empresa;
 
 }
