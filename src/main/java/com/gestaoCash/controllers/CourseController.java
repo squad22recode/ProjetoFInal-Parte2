@@ -52,8 +52,8 @@ public class CourseController {
 
   // update
   @PostMapping("/editar/{id}")
-  public String updateCourse(@ModelAttribute("curso") Course course, @PathVariable Long id) {
-    this.courseService.updateCourseById(id, course);
+  public String updateCourse(@ModelAttribute("curso") Course updatedCourse, @PathVariable Long id) {
+    this.courseService.updateCourseById(id, updatedCourse);
 
     return "redirect:/cursos";
   }
