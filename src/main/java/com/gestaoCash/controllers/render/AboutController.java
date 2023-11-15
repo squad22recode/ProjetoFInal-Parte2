@@ -1,16 +1,16 @@
-package com.gestaoCash.controllers;
+package com.gestaoCash.controllers.render;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/area-cliente")
-public class ClientAreaController {
+@RequestMapping("/sobre")
+public class AboutController {
 
   @GetMapping
-  public String clientArea() {
+  public String about() {
 
-    return "area-cliente.html";
+    return "sobre.html";
   }
 }
