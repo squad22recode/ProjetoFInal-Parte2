@@ -1,0 +1,81 @@
+header li a {
+    color: var(--cinza-quase-branco) !important;
+}
+
+header li a:hover {
+    opacity: .5;
+}
+
+.active {
+    color: var(--cinza-claro) !important;
+}
+
+.list-items li a {
+    color: var(--cinza-quase-branco);
+}
+
+.logo-img {
+    max-width: 170px;
+}
+
+
+.footer {
+    background: rgb(4, 52, 124)0%;
+    background: linear-gradient(27deg,
+            rgba(4, 52, 124, 1) 0%,
+            rgba(104, 129, 165, 1) 48%);
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 35px 10px;
+}
+
+
+.image {
+    width: 200px;
+
+}
+
+
+.lis {
+    font-size: 13px;
+    color: var(--cinza-quase-branco);
+    text-align: center;
+    margin: 0 !important;
+    max-width: 200px;
+}
+
+span {
+    font-size: 13px;
+    color: var(--cinza-quase-branco);
+    text-align: center;
+    margin: 0 !important;
+}
+
+.rede-social {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    object-fit: cover;
+}
+
+.face {
+    width: 35px;
+    height: 35px;
+    min-height: 35px;
+    min-width: 35px;
+    object-fit: cover;
+    border-radius: 50px;
+
+}
+
+.rede {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
