@@ -49,5 +49,16 @@ public class UsersController {
 		return modelAndView;
 
 	}
+	
+	@GetMapping("/entrar")
+	public ModelAndView entrar(Users user) {
+		ModelAndView modelAndView = new ModelAndView("usuario/entrar");
+		return modelAndView;
+	}
+	@GetMapping("/area-cliente")
+	public ModelAndView areaDoCliente(Users user) {
+		ModelAndView modelAndView = new ModelAndView("usuario/area-do-cliente");
+		return modelAndView;
+	}
 
 }
