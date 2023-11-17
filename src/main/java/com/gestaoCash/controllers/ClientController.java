@@ -37,7 +37,7 @@ public class ClientController {
     return "";
   }
 
-  @PostMapping("/cadastro")
+  @PostMapping("/save")
   public String saveClient(@ModelAttribute("cliente") Client client) {
     this.clientService.saveClient(client);
 
