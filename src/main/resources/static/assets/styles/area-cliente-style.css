@@ -1,0 +1,140 @@
+:root {
+    --azul-claro: #5197f5;
+    --cinza-claro: #83a4c9;
+    --azul-escuro: #04347c;
+    --cinza-escuro: #6881a5;
+    --cinza-quase-branco: #c4d1e0;
+}
+
+
+header li a {
+    color: var(--cinza-quase-branco) !important;
+}
+
+header li a:hover {
+    opacity: .5;
+}
+
+.active {
+    color: var(--cinza-claro) !important;
+}
+
+.list-items li a {
+    color: var(--cinza-quase-branco);
+}
+
+.logo-img {
+    max-width: 170px;
+}
+
+
+.card-body {
+    padding: 0 20px 20px 20px;
+}
+
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.profile .profile-card img {
+    max-width: 120px;
+}
+
+.profile .profile-card img {
+    max-width: 120px;
+}
+
+.profile .profile-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c384e;
+    margin: 10px 0 0 0;
+}
+
+.profile .profile-card h3 {
+    font-size: 18px;
+}
+
+.profile .profile-card .social-links a {
+    font-size: 20px;
+    display: inline-block;
+    color: rgba(1, 41, 112, 0.5);
+    line-height: 0;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.profile .profile-card .social-links a:hover {
+    color: #012970;
+}
+
+.profile .profile-physical .row {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.profile .profile-physical .card-title {
+    color: #012970;
+}
+
+.profile .profile-physical .label {
+    font-weight: 600;
+    color: rgba(1, 41, 112, 0.6);
+}
+
+.profile .profile-legal label {
+    font-weight: 600;
+    color: rgba(1, 41, 112, 0.6);
+}
+
+.profile .profile-legal img {
+    max-width: 120px;
+}
+
+.card-study {
+    background-color: var(--azul-escuro) !important;
+    width: 400px !important;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    justify-content: space-between;
+}
+
+.card-study .card-header {
+    background-color: var(--azul-escuro);
+    border-bottom: none;
+    text-align: center;
+    color: var(--cinza-quase-branco);
+    height: 115px;
+    padding: 0;
+}
+
+.card-study p {
+    width: 98%;
+    margin: 0;
+    text-align: justify;
+}
+
+.card-study .card-body {
+    color: var(--cinza-quase-branco);
+}
+
+.card-study div p {
+    color: var(--cinza-claro);
+}
+
+.card-study i {
+    color: var(--cinza-escuro);
+}
+
+.card-study a {
+    background-color: #5197f5;
+    width: 50%;
+    color: var(--cinza-quase-branco);
+
+}
