@@ -28,3 +28,5 @@ O GestãoCash é uma aplicação para ajudar pequenos empreendedores no gerencia
 -   CSS
 -   BOOTSTRAP
 -   JAVASCRIPT NOS GRÁFICOS
+-   JAVA SPRING
+-   POSTGRESS
