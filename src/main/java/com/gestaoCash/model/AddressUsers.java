@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Table(name = "endereco_usuario")
@@ -15,9 +14,9 @@ public class AddressUsers {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-//
-//	@OneToOne(mappedBy = "endereco")
-//	private Users user;
+	//
+	// @OneToOne(mappedBy = "endereco")
+	// private Users user;
 
 	@Column(columnDefinition = "VARCHAR(20)")
 	private String bairro;
@@ -45,13 +44,13 @@ public class AddressUsers {
 		this.id = id;
 	}
 
-//	public Users getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(Users user) {
-//		this.user = user;
-//	}
+	// public Users getUser() {
+	// return user;
+	// }
+	//
+	// public void setUser(Users user) {
+	// this.user = user;
+	// }
 
 	public String getBairro() {
 		return bairro;
@@ -100,6 +99,5 @@ public class AddressUsers {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	
-	
+
 }
