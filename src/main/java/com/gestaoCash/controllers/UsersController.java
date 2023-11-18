@@ -15,9 +15,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gestaoCash.enums.StateEnum;
+import com.gestaoCash.model.Expense;
 import com.gestaoCash.model.Revenue;
 import com.gestaoCash.model.Users;
 import com.gestaoCash.repositories.RevenueRepository;
+import com.gestaoCash.services.ExpenseService;
 import com.gestaoCash.services.UserService;
 
 @Controller
@@ -26,7 +28,9 @@ public class UsersController {
 
 	@Autowired
 	private UserService userService;
-	
+
+	@Autowired
+	private ExpenseService expenseService;
 
 	@GetMapping("/cadastro")
 	public String cadastrar(Model model) {
@@ -64,21 +68,29 @@ public class UsersController {
 
 	@GetMapping("/area-cliente")
 	public ModelAndView areaDoCliente(Users user, Revenue revenue) {
-		ModelAndView modelAndView = new ModelAndView("usuario/area-do-cliente");
+		ModelAndView modelAndView = new ModelAndView("usuario/area-do-cliente.html");
+		//
+		modelAndView.addObject("expense", new Expense());
+		modelAndView.addObject("revenue", new Revenue());
+		//
 		return modelAndView;
 	}
-	
+
 	@Autowired
 	private RevenueRepository rRepository;
-	
+
 	@PostMapping("/area-cliente")
 	public ModelAndView areaDoCliente(@ModelAttribute("revenue") Revenue revenue) {
-		
-		
-		
+
 		rRepository.save(revenue);
 		ModelAndView modelAndView = new ModelAndView("redirect:area-do-cliente");
 		return modelAndView;
 	}
 
+	@PostMapping("/area-cliente/despesa")
+	public String addExpense(@ModelAttribute("expense") Expense expense) {
+		this.expenseService.saveExpense(expense);
+
+		return "redirect:/";
+	}
 }

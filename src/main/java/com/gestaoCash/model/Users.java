@@ -2,7 +2,9 @@ package com.gestaoCash.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -10,6 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,9 +32,17 @@ public class Users {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
 	private Address enderecoUsuario;
-	
+
 	@OneToMany(mappedBy = "usuario", orphanRemoval = true, cascade = CascadeType.ALL)
-	private List<Revenue> revenue = new ArrayList<Revenue>(); 
+	private List<Revenue> revenue = new ArrayList<Revenue>();
+
+	// pode ser unidirecional ou bidirecional
+	// um usuario (essa classe) pode ter varias despesas (set<Expense> expenses)
+	// @OneToMany(cascade = { CascadeType.PERSIST }, fetch = FetchType.LAZY)
+	// private Set<Expense> expenses = new HashSet<>();
+
+	// @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	// private List<Expense> expenses;
 
 	public List<Revenue> getRevenue() {
 		return revenue;
@@ -186,5 +197,13 @@ public class Users {
 	public void setInstagram(String instagram) {
 		this.instagram = instagram;
 	}
+
+	// public Set<Expense> getExpenses() {
+	// return expenses;
+	// }
+
+	// public void setExpenses(Set<Expense> expenses) {
+	// this.expenses = expenses;
+	// }
 
 }
