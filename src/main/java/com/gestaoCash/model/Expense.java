@@ -1,12 +1,18 @@
 package com.gestaoCash.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Table
@@ -17,13 +23,68 @@ public class Expense {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  // muitas despesas( essa classe) para um usuario (private Users usuario)
+  // @ManyToOne
+  @ManyToOne(cascade = CascadeType.PERSIST)
+  @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+  private Users usuario;
+
   private String descricao;
 
-  @Column(columnDefinition = "DATETIME")
-  private LocalDateTime data;
+  @DateTimeFormat(iso = ISO.DATE)
+  private LocalDate data;
 
   private String observacao;
 
   @Column(columnDefinition = "DECIMAL(10,2)")
   private Double valor;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Users getUsuario() {
+    return usuario;
+  }
+
+  public void setUsuario(Users usuario) {
+    this.usuario = usuario;
+  }
+
+  public String getDescricao() {
+    return descricao;
+  }
+
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
+
+  public LocalDate getData() {
+    return data;
+  }
+
+  public void setData(LocalDate data) {
+    this.data = data;
+  }
+
+  public String getObservacao() {
+    return observacao;
+  }
+
+  public void setObservacao(String observacao) {
+    this.observacao = observacao;
+  }
+
+  public Double getValor() {
+    return valor;
+  }
+
+  public void setValor(Double valor) {
+    this.valor = valor;
+  }
+
 }
