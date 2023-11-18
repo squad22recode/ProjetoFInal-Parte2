@@ -8,32 +8,31 @@
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<title>GestãoCash | Área do Cliente</title>
 	<!-- imports css -->
-	<link rel="stylesheet" href="../assets/styles/area-cliente-style.css">
-	<link rel="stylesheet" href="../assets/styles/style.css">
-	<link rel="stylesheet" href="../assets/styles/header-footer.css">
+	<link rel="stylesheet" href="/assets/styles/area-cliente-style.css">
+	<link rel="stylesheet" href="/assets/styles/style.css">
+	<link rel="stylesheet" href="/assets/styles/header-footer.css">
 
-	<link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/logo.png" type="image/x-icon">
 	<!-- imposts vendor bootstrap -->
-	<link rel="stylesheet" href="../assets/vendor/boxicons/css/boxicons.min.css">
-	<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
-	<link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../assets/css/style.css" rel="stylesheet">
-	<link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-	<link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-	<link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.min.css">
+	<link href="/assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+	<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+	<link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+	<link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 	<!-- import google fonts -->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
 		rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
 	<!-- import cript gráficos -->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
-
 <body>
-
 	<!-- Inicio header -->
 	<div th:replace="fragments/header :: header"></div>
 	<!-- fim header -->
@@ -69,8 +68,7 @@
 					<!-- Inicio navegação entre abas -->
 					<ul class="nav nav-tabs nav-tabs-bordered">
 						<li class="nav-item">
-							<button class="nav-link active" data-bs-toggle="tab"
-								data-bs-target="#profile-physical">Pessoa Física</button>
+							<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-physical">Pessoa Física</button>
 						</li>
 
 						<li class="nav-item">
@@ -90,13 +88,11 @@
 							<section id="main" class="main">
 								<div class="pagetitle">
 									<h1>Pessoa Física</h1>
-									<span class="btn btn-primary" data-bs-toggle="modal"
-										data-bs-target="#modalReceita">Adicionar receita</span>
-									<span class="btn btn-danger">Adicionar despesa</span>
+									<span class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReceita">Adicionar receita</span>
+									<span class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDespesa">Adicionar despesa</span>
 								</div>
 								<!-- Modal -->
-								<div class="modal fade" id="modalReceita" tabindex="-1"
-									aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal fade" id="modalReceita" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header">
@@ -104,33 +100,72 @@
 											</div>
 											<div class="modal-body">
 												<form th:object="${revenue}" method="post">
-													
-													 <div class="mb-3">
-    <label for="InputData" class="form-label">Data</label>
-    <input type="date" class="form-control" id="InputData" th:field="*{data}">
- 
-  </div>
-  <div class="mb-3">
-    <label for="InputDescricao" class="form-label">Descrição</label>
-    <input type="text" class="form-control" id="InputData" th:field="*{descricao}">
- 
-  </div>
-  <div class="mb-3">
-    <label for="InputValor" class="form-label">Valor</label>
-    <input type="number" class="form-control" id="InputValor" th:field="*{valor}" 
-    step="0.01" maxlength="10" placeholder="109.00">
- 	
-  </div>
-    <button type="submit" class="btn btn-primary">Salvar</button>
+
+													<div class="mb-3">
+														<label for="InputData" class="form-label">Data</label>
+														<input type="date" class="form-control" id="InputData" th:field="*{data}">
+
+													</div>
+													<div class="mb-3">
+														<label for="InputDescricao" class="form-label">Descrição</label>
+														<input type="text" class="form-control" id="InputData" th:field="*{descricao}">
+
+													</div>
+													<div class="mb-3">
+														<label for="InputValor" class="form-label">Valor</label>
+														<input type="number" class="form-control" id="InputValor" th:field="*{valor}" step="0.01" maxlength="10" placeholder="109.00">
+
+													</div>
+													<button type="submit" class="btn btn-primary">Salvar</button>
 												</form>
 											</div>
 											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<!-- Modal despesa-->
+								<div class="modal fade" id="modalDespesa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Despesa</h1>
+											</div>
+											<div class="modal-body">
+												<form th:object="${expense}" th:action="@{/usuario/area-cliente/despesa}" method="post">
+
+													<div class="mb-3">
+														<label for="InputData" class="form-label">Data</label>
+														<input type="date" class="form-control" id="InputData" th:field="*{data}">
+
+													</div>
+													<div class="mb-3">
+														<label for="InputDescricao" class="form-label">Descrição</label>
+														<input type="text" class="form-control" id="InputData" th:field="*{descricao}">
+
+													</div>
+													<div class="mb-3">
+														<label for="InputValor" class="form-label">Valor</label>
+														<input type="number" class="form-control" id="InputValor" th:field="*{valor}" step="0.01" maxlength="10" placeholder="109.00">
+
+													</div>
+													<div class="mb-3">
+														<label for="InputValor" class="form-label">Observações</label>
+														<input type="text" class="form-control" id="InputValor" th:field="*{observacao}" step="0.01" maxlength="50" placeholder="109.00">
+
+													</div>
+													<button type="submit" class="btn btn-primary">Salvar</button>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div class="section dashboard">
 									<div class="row">
 										<div class="col-lg-12">
@@ -139,10 +174,8 @@
 													<div class="card recent-sales overflow-auto">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 
 																<li><a class="dropdown-item" href="#">Janeiro</a></li>
@@ -244,8 +277,7 @@
 															</table>
 
 															<!-- gráfico de pizza-->
-															<canvas id="pieChart" class="my-5"
-																style="max-height: 400px;"></canvas>
+															<canvas id="pieChart" class="my-5" style="max-height: 400px;"></canvas>
 															<script>
 																document.addEventListener("DOMContentLoaded", () => {
 																	new Chart(document.querySelector('#pieChart'), {
@@ -330,8 +362,7 @@
 																</tbody>
 															</table>
 
-															<div class="card p-2 overflow-auto alert alert-danger"
-																role="alert">
+															<div class="card p-2 overflow-auto alert alert-danger" role="alert">
 
 																<table>
 																	<thead>
@@ -360,8 +391,7 @@
 																	</tbody>
 																</table>
 
-																<h6 class="p-3 badge bg-danger"
-																	style="max-width: 200px;">*Nenhum investimento
+																<h6 class="p-3 badge bg-danger" style="max-width: 200px;">*Nenhum investimento
 																	realizado</h6>
 															</div>
 
@@ -422,10 +452,8 @@
 													<div class="card info-card sales-card">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 																<li><a class="dropdown-item" href="#">Vendas hoje</a>
 																</li>
@@ -441,16 +469,13 @@
 															<h5 class="card-title">Vendas <span>| Hoje</span></h5>
 
 															<div class="d-flex align-items-center">
-																<div
-																	class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+																<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
 																	<i class="bi bi-cart"></i>
 																</div>
 																<div class="ps-3">
 																	<h6>8</h6>
-																	<span
-																		class="text-success small pt-1 fw-bold">12%</span>
-																	<span
-																		class="text-muted small pt-2 ps-1">Aumento</span>
+																	<span class="text-success small pt-1 fw-bold">12%</span>
+																	<span class="text-muted small pt-2 ps-1">Aumento</span>
 
 																</div>
 															</div>
@@ -464,10 +489,8 @@
 													<div class="card info-card revenue-card">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 																<li><a class="dropdown-item" href="#">Receita hoje</a>
 																</li>
@@ -484,16 +507,13 @@
 															</h5>
 
 															<div class="d-flex align-items-center">
-																<div
-																	class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+																<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
 																	<i class="bi bi-currency-dollar"></i>
 																</div>
 																<div class="ps-3">
 																	<h6>R$ 1250,00</h6>
-																	<span
-																		class="text-success small pt-1 fw-bold">8%</span>
-																	<span
-																		class="text-muted small pt-2 ps-1">Aumento</span>
+																	<span class="text-success small pt-1 fw-bold">8%</span>
+																	<span class="text-muted small pt-2 ps-1">Aumento</span>
 
 																</div>
 															</div>
@@ -508,10 +528,8 @@
 													<div class="card info-card customers-card">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 
 																<li><a class="dropdown-item" href="#">Hoje</a></li>
@@ -526,16 +544,13 @@
 															</h5>
 
 															<div class="d-flex align-items-center">
-																<div
-																	class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+																<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
 																	<i class="bi bi-people"></i>
 																</div>
 																<div class="ps-3">
 																	<h6>150</h6>
-																	<span
-																		class="text-danger small pt-1 fw-bold">5%</span>
-																	<span
-																		class="text-muted small pt-2 ps-1">Redução</span>
+																	<span class="text-danger small pt-1 fw-bold">5%</span>
+																	<span class="text-muted small pt-2 ps-1">Redução</span>
 
 																</div>
 															</div>
@@ -551,10 +566,8 @@
 													<div class="card">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 
 																<li><a class="dropdown-item" href="#">Hoje</a></li>
@@ -584,10 +597,8 @@
 													<div class="card recent-sales overflow-auto">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 
 																<li><a class="dropdown-item" href="#">Hoje</a></li>
@@ -620,8 +631,7 @@
 																		<td><a href="#" class="text-primary">Cabo USB
 																				Tipo - C</a></td>
 																		<td>R$ 5,99</td>
-																		<td><span
-																				class="badge bg-success">Aprovado</span>
+																		<td><span class="badge bg-success">Aprovado</span>
 																		</td>
 																	</tr>
 																	<tr>
@@ -632,8 +642,7 @@
 																				Celular Samsung
 																			</a></td>
 																		<td>R$ 10,00</td>
-																		<td><span
-																				class="badge bg-success">Aprovado</span>
+																		<td><span class="badge bg-success">Aprovado</span>
 																		</td>
 																	</tr>
 																	<tr>
@@ -643,8 +652,7 @@
 																		<td><a href="#" class="text-primary"> Mini caixa
 																				de som TG-151</a></td>
 																		<td>R$ 159,90</td>
-																		<td><span
-																				class="badge bg-danger">Cancelado</span>
+																		<td><span class="badge bg-danger">Cancelado</span>
 																		</td>
 																	</tr>
 
@@ -656,8 +664,7 @@
 																				Interruptor inteligente Link-532</a>
 																		</td>
 																		<td>R$ 56,90</td>
-																		<td><span
-																				class="badge bg-warning">Pendente</span>
+																		<td><span class="badge bg-warning">Pendente</span>
 																		</td>
 																	</tr>
 
@@ -675,10 +682,8 @@
 													<div class="card top-selling overflow-auto">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 																<li><a class="dropdown-item" href="#">Hoje</a></li>
 																<li><a class="dropdown-item" href="#">Esse mês</a>
@@ -703,9 +708,7 @@
 																</thead>
 																<tbody>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/fone.jpg"
-																					alt=""></a></th>
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/fone.jpg" alt=""></a></th>
 																		<td><span class="text-primary fw-bold">
 																				Fone de ouvido Bluetooth </a></td>
 																		<td>R$ 21,90</td>
@@ -713,9 +716,7 @@
 																		<td>R$ 109,50</td>
 																		span
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto2.jpeg"
-																					alt=""></a></th>
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto2.jpeg" alt=""></a></th>
 																		<td><span class="text-primary fw-bold">Cabo USB
 																				Tipo-C
 																				</a></td>
@@ -724,11 +725,8 @@
 																		<td>R$ 29,95</td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto3.jpg"
-																					alt=""></a></th>
-																		<td><span
-																				class="text-primary fw-bold">Carregador
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto3.jpg" alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Carregador
 																				USB
 																				turbo
 																				</a></td>
@@ -737,20 +735,15 @@
 																		<td>R$ 79,95</td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto4.jpeg"
-																					alt=""></a></th>
-																		<td><span
-																				class="text-primary fw-bold">Carregador
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto4.jpeg" alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Carregador
 																				Turbo Veicular</a></td>
 																		<td>R$ 30,00</td>
 																		<td class="fw-bold">3</td>
 																		<td>R$ 90,00</td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto5.webp"
-																					alt=""></a></th>
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto5.webp" alt=""></a></th>
 																		<td><span class="text-primary fw-bold">Smarth
 																				Watch Pro Serie GI08
 																				</a>
@@ -787,9 +780,7 @@
 																</thead>
 																<tbody>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/fone.jpg"
-																					alt=""></a></th>
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/fone.jpg" alt=""></a></th>
 																		<td><span class="text-primary fw-bold">
 																				Fone de ouvido Bluetooth </a></td>
 																		<td>R$ 21,90</td>
@@ -798,9 +789,7 @@
 																				acabar</span></td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto2.jpeg"
-																					alt=""></a></th>
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto2.jpeg" alt=""></a></th>
 																		<td><span class="text-primary fw-bold">Cabo USB
 																				Tipo-C
 																				</a></td>
@@ -810,11 +799,8 @@
 																				estoque</span></td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto3.jpg"
-																					alt=""></a></th>
-																		<td><span
-																				class="text-primary fw-bold">Carregador
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto3.jpg" alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Carregador
 																				USB
 																				turbo
 																				</a></td>
@@ -824,11 +810,8 @@
 																				acabar</span></td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto4.jpeg"
-																					alt=""></a></th>
-																		<td><span
-																				class="text-primary fw-bold">Carregador
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto4.jpeg" alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Carregador
 																				Turbo Veicular</a></td>
 																		<td>R$ 30,00</td>
 																		<td class="fw-bold">0</td>
@@ -836,9 +819,7 @@
 																				falta</span></td>
 																	</tr>
 																	<tr>
-																		<th scope="row"><a href="#"><img
-																					src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto5.webp"
-																					alt=""></a></th>
+																		<th scope="row"><a href="#"><img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/produto5.webp" alt=""></a></th>
 																		<td><span class="text-primary fw-bold">Smarth
 																				Watch Pro Serie GI08
 																				</a>
@@ -861,10 +842,8 @@
 													<div class="card recent-sales overflow-auto">
 
 														<div class="filter">
-															<a class="icon" href="#" data-bs-toggle="dropdown"><i
-																	class="bi bi-three-dots"></i></a>
-															<ul
-																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+															<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
 
 
 																<li><a class="dropdown-item" href="#">Janeiro</a></li>
@@ -999,8 +978,7 @@
 															</table>
 
 
-															<div class="card p-2 overflow-auto alert alert-info"
-																role="alert">
+															<div class="card p-2 overflow-auto alert alert-info" role="alert">
 
 																<table>
 																	<thead>
@@ -1071,8 +1049,7 @@
 												uma boa gestão
 												financeira. Veja neste curso como se posicionar para controlar as
 												finanças em seu negócio.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/gestao-financeira,7370b8a6a28bb610VgnVCM1000004c00210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/gestao-financeira,7370b8a6a28bb610VgnVCM1000004c00210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1086,8 +1063,7 @@
 												gestão,
 												empreendedorismo e inovação visando a criação de uma rede de suporte e
 												consultoria para os pequenos negócios. </p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/contador-parceiro-construindo-o-sucesso,af35681a0e0f8710VgnVCM100000d701210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/contador-parceiro-construindo-o-sucesso,af35681a0e0f8710VgnVCM100000d701210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1101,8 +1077,7 @@
 												de
 												venda e como
 												fazê-la da forma mais adequada ao seu negócio.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/comunicacao-no-processo-de-vendas-para-pequenos-negocios,2b77575592143810VgnVCM100000d701210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/comunicacao-no-processo-de-vendas-para-pequenos-negocios,2b77575592143810VgnVCM100000d701210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1115,8 +1090,7 @@
 											<p class="card-body">A pandemia de Covid 19 acelerou de maneira imprevista a
 												adoção de mudanças e a digitalização dos negócios, e por isso a
 												necessidade desses conhecimentos aumentou exponencialmente.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/inovacao-e-agilidade-o-futuro-do-empreendedorismo,c269f07e6fb5c710VgnVCM100000d701210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/inovacao-e-agilidade-o-futuro-do-empreendedorismo,c269f07e6fb5c710VgnVCM100000d701210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1128,8 +1102,7 @@
 											<p class="card-body">Aprenda a estruturar e analisar os custos de sua
 												empresa para estipular o preço de venda adequado para os seus produtos
 												ou serviços.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/formacao-do-preco-de-venda,7490b8a6a28bb610VgnVCM1000004c00210aRCRD  "
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/formacao-do-preco-de-venda,7490b8a6a28bb610VgnVCM1000004c00210aRCRD  " class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1141,8 +1114,7 @@
 											</div>
 											<p class="card-body">Saiba como impulsionar os resultados do seu negócio
 												através do marketing digital.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/marketing-digital-para-sua-empresa-reforcando-sua-presenca,c0c7125576a4e710VgnVCM100000d701210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/marketing-digital-para-sua-empresa-reforcando-sua-presenca,c0c7125576a4e710VgnVCM100000d701210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1154,8 +1126,7 @@
 											<p class="card-body">Aprenda estratégias valiosas para comprar bem, adquirir
 												insumos de qualidade e obter preços e prazos favoráveis aos pagamentos,
 												aumentando a lucratividade dos seus negócios.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-comprar-bem-e-de-bons-fornecedores,0101b8a6a28bb610VgnVCM1000004c00210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-comprar-bem-e-de-bons-fornecedores,0101b8a6a28bb610VgnVCM1000004c00210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1168,8 +1139,7 @@
 												aspectos da gestão de uma loja virtual em marketplaces, bem como seus
 												indicadores e ferramentas oferecidas pelas operadoras de marketplaces.
 											</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-melhorar-a-gestao-de-sua-loja-virtual-em-marketplace,0f9beb34f5193710VgnVCM1000004c00210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-melhorar-a-gestao-de-sua-loja-virtual-em-marketplace,0f9beb34f5193710VgnVCM1000004c00210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 										<div class="card card-study">
@@ -1180,8 +1150,7 @@
 											</div>
 											<p class="card-body">Veja neste curso que para vender é preciso conhecer os
 												produtos, os clientes e as necessidades do mercado.</p>
-											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-turbinar-suas-vendas,1ba0b8a6a28bb610VgnVCM1000004c00210aRCRD"
-												class="btn" target="_blanck">Saiba mais</a>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-turbinar-suas-vendas,1ba0b8a6a28bb610VgnVCM1000004c00210aRCRD" class="btn" target="_blanck">Saiba mais</a>
 										</div>
 
 
@@ -1192,7 +1161,6 @@
 						<!-- Fim navegação conhecimento -->
 	</section>
 
-
 	</div>
 	</div>
 
@@ -1201,13 +1169,11 @@
 	</section>
 	<div th:replace="fragments/footer :: footer"></div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 	<!-- script do Chart.js -->
-	<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-	<script src="assets/vendor/chart.js/chart.umd.js"></script>
-	<script src="assets/vendor/echarts/echarts.min.js"></script>
+	<script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
+	<script src="/assets/vendor/chart.js/chart.umd.js"></script>
+	<script src="/assets/vendor/echarts/echarts.min.js"></script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
@@ -1262,4 +1228,5 @@
 		});
 	</script>
 </body>
+
 </html>
