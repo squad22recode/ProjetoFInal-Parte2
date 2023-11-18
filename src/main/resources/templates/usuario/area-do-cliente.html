@@ -2,1306 +2,1345 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- import booststrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>GestãoCash | Área do Cliente</title>
-    <!-- imports css -->
-    <link rel="stylesheet" href="../assets/styles/area-cliente-style.css">
-    <link rel="stylesheet" href="../assets/styles/style.css">
-    <link rel="stylesheet" href="../assets/styles/header-footer.css">
+	<!-- import booststrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<title>GestãoCash | Área do Cliente</title>
+	<!-- imports css -->
+	<link rel="stylesheet" href="../assets/styles/area-cliente-style.css">
+	<link rel="stylesheet" href="../assets/styles/style.css">
+	<link rel="stylesheet" href="../assets/styles/header-footer.css">
 
-    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
-    <!-- imposts vendor bootstrap -->
-    <link rel="stylesheet" href="../assets/vendor/boxicons/css/boxicons.min.css">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-    <!-- import google fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- import cript gráficos -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+	<link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+	<!-- imposts vendor bootstrap -->
+	<link rel="stylesheet" href="../assets/vendor/boxicons/css/boxicons.min.css">
+	<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+	<link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+	<link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+	<!-- import google fonts -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- import cript gráficos -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body>
 
-    <!-- Inicio header -->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-transparent text-center">
-            <div class="container">
-                <a class="navbar-brand" href="/"><img src="../assets/images/logo.png" class="logo-img"
-                        alt="logo gestãocash" /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                    <ul class="navbar-nav gap-3 fs-5 list-items">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/">Página inicial</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link  active" href="area-cliente">Área do cliente</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="duvidas.html">Dúvidas frequentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contato.html">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobre.html">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Sair</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- fim header -->
-
-    <section class="section profile container">
-        <!-- Inicio perfil do cliente -->
-        <div class="row justify-content-center mt-3">
-            <div class="col-10 col-md-5 col-lg-4">
-
-                <div class="card">
-                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-                        <img src="../assets/images/Squad22.png" alt="Profile" class="rounded-circle">
-                        <h2>Squad 22</h2>
-                        <h3>Produtos eletrônicos</h3>
-                        <div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- Fim perfil cliente -->
-
-        <div class="col-xl-12">
-
-            <div class="card">
-                <div class="card-body pt-3">
-                    <!-- Inicio navegação entre abas -->
-                    <ul class="nav nav-tabs nav-tabs-bordered">
-                        <li class="nav-item">
-                            <button class="nav-link active" data-bs-toggle="tab"
-                                data-bs-target="#profile-physical">Pessoa Física</button>
-                        </li>
-
-                        <li class="nav-item">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-legal">Pessoa
-                                Jurídica</button>
-                        </li>
-
-                        <li class="nav-item">
-                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-study">Área do
-                                conhecimento</button>
-                        </li>
-                    </ul>
-                    <!-- Fim navegação entre abas -->
-                    <div class="tab-content pt-2">
-                        <!-- Inicio navegação pessoa fisica -->
-                        <div class="tab-pane fade show active profile-physical" id="profile-physical">
-                            <section id="main" class="main">
-                                <div class="pagetitle">
-                                    <h1>Pessoa Física</h1>
-                                </div>
-
-                                <div class="section dashboard">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="card recent-sales overflow-auto">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-
-                                                                <li><a class="dropdown-item" href="#">Janeiro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Fevereiro</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Março</a></li>
-                                                                <li><a class="dropdown-item" href="#">Abril</a></li>
-                                                                <li><a class="dropdown-item" href="#">Maio</a></li>
-                                                                <li><a class="dropdown-item" href="#">Junho</a></li>
-                                                                <li><a class="dropdown-item" href="#">Julho</a></li>
-                                                                <li><a class="dropdown-item" href="#">Agosto</a></li>
-                                                                <li><a class="dropdown-item" href="#">Setembro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Outubro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Novembro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Dezembro</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Controle financeiro <span>|
-                                                                    Fevereiro 2023</span>
-                                                            </h5>
-                                                            <div class="pagetitle">
-                                                                <p>Despesas:</p>
-                                                            </div>
-
-                                                            <table class="table table-borderless datatable">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">Dia</th>
-                                                                        <th scope="col">Categoria</th>
-                                                                        <th scope="col">Valor</th>
-                                                                        <th scope="col">Fixas / Variaveis</th>
-                                                                        <th scope="col">Observação</th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-
-                                                                        <td>05</td>
-                                                                        <td>Internet</td>
-                                                                        <td>R$ 79,90</td>
-                                                                        <td>Fixa</td>
-                                                                        <td></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>08</td>
-                                                                        <td>Cartão de crédito</td>
-                                                                        <td>R$ 208,90</td>
-                                                                        <td>Variável</td>
-                                                                        <td>Cartão mastercard vencimento dia 10</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>12</td>
-                                                                        <td>Alimentação</td>
-                                                                        <td>R$ 15,90</td>
-                                                                        <td>Variável</td>
-                                                                        <td>Almoço na rua</td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>19</td>
-                                                                        <td>Lazer</td>
-                                                                        <td>R$ 100,00</td>
-                                                                        <td>Variável</td>
-                                                                        <td>Cinema </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>19</td>
-                                                                        <td>Transporte</td>
-                                                                        <td>R$ 50,00</td>
-                                                                        <td>Variável</td>
-                                                                        <td>Uber até o cinema</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>21</td>
-                                                                        <td>Conta de luz</td>
-                                                                        <td>R$ 20,00</td>
-                                                                        <td>Fixa</td>
-                                                                        <td></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>28</td>
-                                                                        <td>Mercado</td>
-                                                                        <td>R$ 300,00</td>
-                                                                        <td>Fixa</td>
-                                                                        <td></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>28</td>
-                                                                        <td>Água</td>
-                                                                        <td>R$ 50,00</td>
-                                                                        <td>Fixa</td>
-                                                                        <td></td>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-
-                                                            <!-- gráfico de pizza-->
-                                                            <canvas id="pieChart" class="my-5"
-                                                                style="max-height: 400px;"></canvas>
-                                                            <script>
-                                                                document.addEventListener("DOMContentLoaded", () => {
-                                                                    new Chart(document.querySelector('#pieChart'), {
-                                                                        type: 'pie',
-                                                                        data: {
-                                                                            labels: [
-                                                                                'Fixas',
-                                                                                'Cartão de crédito',
-                                                                                'Alimentação',
-                                                                                'Lazer  ',
-                                                                                'Transporte'
-                                                                            ],
-                                                                            datasets: [{
-                                                                                label: 'Gráfico de despesas',
-                                                                                data: [399.90, 208.90, 15.90, 100.00, 50.00,],
-                                                                                backgroundColor: [
-                                                                                    'rgb(255, 99, 132)',
-                                                                                    'rgb(54, 162, 235)',
-                                                                                    'rgb(255, 205, 86)',
-                                                                                    'rgb(105,89,205)',
-                                                                                    '#228B22',
-
-                                                                                ],
-                                                                                hoverOffset: 4
-                                                                            }]
-                                                                        }
-                                                                    });
-                                                                });
-                                                            </script>
-
-                                                            <div class="pagetitle ">
-                                                                <p>Ontras fontes de receita (Lembrando que sua empresa
-                                                                    faturou R$ 380,00 no mês anterior):</p>
-                                                            </div>
-
-                                                            <table class="table table-borderless datatable">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">Dia</th>
-                                                                        <th scope="col">Categoria</th>
-                                                                        <th scope="col">Valor</th>
-                                                                        <th scope="col">Observação</th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-
-                                                                        <td>04</td>
-                                                                        <td>Extra</td>
-                                                                        <td>R$ 120,00</td>
-                                                                        <td>Renda extra em lavagem de carros</td>
-
-                                                                    </tr>
-
-                                                                    <tr>
-
-                                                                        <td>11</td>
-                                                                        <td>Extra</td>
-                                                                        <td>R$ 100,00</td>
-                                                                        <td>Renda extra em lavagem de carros</td>
-
-                                                                    </tr>
-
-                                                                    <tr>
-
-                                                                        <td>18</td>
-                                                                        <td>Extra</td>
-                                                                        <td>R$ 150,00</td>
-                                                                        <td>Renda extra em lavagem de carros</td>
-
-                                                                    </tr>
-
-                                                                    <tr>
-
-                                                                        <td>25</td>
-                                                                        <td>Extra</td>
-                                                                        <td>R$ 90,00</td>
-                                                                        <td>Renda extra em lavagem de carros</td>
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                            <div class="card p-2 overflow-auto alert alert-danger"
-                                                                role="alert">
-
-                                                                <table>
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>
-                                                                                Receita Total Bruta:
-                                                                            </th>
-                                                                            <th>
-                                                                                Despesa total:
-                                                                            </th>
-                                                                            <th>
-                                                                                Receita Total Líquida:
-                                                                            </th>
-                                                                            <th>
-                                                                                Investimentos:
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>R$ 840,40</td>
-                                                                            <td>R$ 824,70</td>
-                                                                            <td>R$ 15,30</td>
-                                                                            <td>R$ 0,00</td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-
-                                                                <h6 class="p-3 badge bg-danger"
-                                                                    style="max-width: 200px;">*Nenhum investimento
-                                                                    realizado</h6>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div><!-- fim controle financeiro -->
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="lineChart" style="max-height: 400px;"></canvas>
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", () => {
-                                        new Chart(document.querySelector('#lineChart'), {
-                                            type: 'line',
-                                            data: {
-                                                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto'],
-                                                datasets: [{
-                                                    label: 'Receita bruta anual',
-                                                    data: [750.10, 840.40, 900.00, 850.90, 1100.00, 910.90, 779.00, 898.50],
-                                                    fill: false,
-                                                    borderColor: '#04347c',
-                                                    tension: 0.1
-                                                }]
-                                            },
-                                            options: {
-                                                scales: {
-                                                    y: {
-                                                        beginAtZero: false
-                                                    }
-                                                }
-                                            }
-                                        });
-                                    });
-                                </script>
-                            </section>
-                        </div>
-                        <!-- Fim navegação pessoa fisica -->
-                        <!-- Inicio navegação pessoa Juridica -->
-                        <div class="tab-pane fade profile-legal pt-3" id="profile-legal">
-
-                            <section id="main" class="main">
-
-                                <div class="pagetitle">
-                                    <h1>Pessoa Jurídica</h1>
-                                </div>
-
-                                <div class="section dashboard">
-                                    <div class="row">
-
-                                        <div class="col-lg-12">
-                                            <div class="row">
-
-                                                <!-- Card de vendas -->
-                                                <div class="col-lg-4">
-                                                    <div class="card info-card sales-card">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-                                                                <li><a class="dropdown-item" href="#">Vendas hoje</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Vendas esse
-                                                                        mês</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Vendas esse
-                                                                        ano</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Vendas <span>| Hoje</span></h5>
-
-                                                            <div class="d-flex align-items-center">
-                                                                <div
-                                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                                    <i class="bi bi-cart"></i>
-                                                                </div>
-                                                                <div class="ps-3">
-                                                                    <h6>8</h6>
-                                                                    <span
-                                                                        class="text-success small pt-1 fw-bold">12%</span>
-                                                                    <span
-                                                                        class="text-muted small pt-2 ps-1">Aumento</span>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div><!-- Fim card vendas -->
-
-                                                <!--card de receitas -->
-                                                <div class="col-lg-4">
-                                                    <div class="card info-card revenue-card">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-                                                                <li><a class="dropdown-item" href="#">Receita hoje</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Receita esse
-                                                                        mês</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Receita esse
-                                                                        ano</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Receita <span>| Esse mês </span>
-                                                            </h5>
-
-                                                            <div class="d-flex align-items-center">
-                                                                <div
-                                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                                    <i class="bi bi-currency-dollar"></i>
-                                                                </div>
-                                                                <div class="ps-3">
-                                                                    <h6>R$ 1250,00</h6>
-                                                                    <span
-                                                                        class="text-success small pt-1 fw-bold">8%</span>
-                                                                    <span
-                                                                        class="text-muted small pt-2 ps-1">Aumento</span>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div><!-- Fim card de receitas -->
-
-                                                <!-- Card de clientes -->
-                                                <div class="col-lg-4">
-
-                                                    <div class="card info-card customers-card">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-
-                                                                <li><a class="dropdown-item" href="#">Hoje</a></li>
-                                                                <li><a class="dropdown-item" href="#">Esse mÊs</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Esse ano</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Clientes <span>| Esse ano</span>
-                                                            </h5>
-
-                                                            <div class="d-flex align-items-center">
-                                                                <div
-                                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                                    <i class="bi bi-people"></i>
-                                                                </div>
-                                                                <div class="ps-3">
-                                                                    <h6>150</h6>
-                                                                    <span
-                                                                        class="text-danger small pt-1 fw-bold">5%</span>
-                                                                    <span
-                                                                        class="text-muted small pt-2 ps-1">Redução</span>
-
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!-- Fim card de clientes -->
-
-                                                <!-- realatórios e gráficos -->
-                                                <div class="col-12">
-                                                    <div class="card">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-
-                                                                <li><a class="dropdown-item" href="#">Hoje</a></li>
-                                                                <li><a class="dropdown-item" href="#">Esse mês</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Esse ano</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Relatórios <span>| Esse mês</span>
-                                                            </h5>
-
-                                                            <!-- Line Chart -->
-                                                            <div id="reportsChart"></div>
-
-
-                                                            <!-- End Line Chart -->
-
-                                                        </div>
-
-                                                    </div>
-                                                </div><!-- Fim relatorio -->
-
-                                                <!-- Vendas recentes-->
-                                                <div class="col-12">
-                                                    <div class="card recent-sales overflow-auto">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-
-                                                                <li><a class="dropdown-item" href="#">Hoje</a></li>
-                                                                <li><a class="dropdown-item" href="#">Esse mês</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Esse ano</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Vendas recentes <span>| Hoje</span>
-                                                            </h5>
-
-                                                            <table class="table table-borderless datatable">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">Cód. produto</th>
-                                                                        <th scope="col">Data</th>
-                                                                        <th scope="col">Cliente</th>
-                                                                        <th scope="col">Produto / Serviço</th>
-                                                                        <th scope="col">Preço</th>
-                                                                        <th scope="col">Status</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#">#05</a></th>
-                                                                        <td>25/08/2023</td>
-                                                                        <td>Bruno Fernandes</td>
-                                                                        <td><a href="#" class="text-primary">Cabo USB
-                                                                                Tipo - C</a></td>
-                                                                        <td>R$ 5,99</td>
-                                                                        <td><span
-                                                                                class="badge bg-success">Aprovado</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#">#15</a></th>
-                                                                        <td>25/08/2023</td>
-                                                                        <td>Bruno fernandes</td>
-                                                                        <td><a href="#" class="text-primary">Carregador
-                                                                                Celular Samsung
-                                                                            </a></td>
-                                                                        <td>R$ 10,00</td>
-                                                                        <td><span
-                                                                                class="badge bg-success">Aprovado</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#">#02</a></th>
-                                                                        <td>25/08/2023</td>
-                                                                        <td>Antony</td>
-                                                                        <td><a href="#" class="text-primary"> Mini caixa
-                                                                                de som TG-151</a></td>
-                                                                        <td>R$ 159,90</td>
-                                                                        <td><span
-                                                                                class="badge bg-danger">Cancelado</span>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#">#35</a></th>
-                                                                        <td>25/08/2023</td>
-                                                                        <td>Jadel Vieira</td>
-                                                                        <td><a href="#" class="text-primary">
-                                                                                Interruptor inteligente Link-532</a>
-                                                                        </td>
-                                                                        <td>R$ 56,90</td>
-                                                                        <td><span
-                                                                                class="badge bg-warning">Pendente</span>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div><!-- fim vendas recentes -->
-
-                                                <!-- Top vendas -->
-                                                <div class="col-12">
-                                                    <div class="card top-selling overflow-auto">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-                                                                <li><a class="dropdown-item" href="#">Hoje</a></li>
-                                                                <li><a class="dropdown-item" href="#">Esse mês</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Esse ano</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body pb-0">
-                                                            <h5 class="card-title">Mais vendidos<span> | Esse mês</span>
-                                                            </h5>
-
-                                                            <table class="table table-borderless">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">Vizualização</th>
-                                                                        <th scope="col">Produto / Serviço</th>
-                                                                        <th scope="col">Preço</th>
-                                                                        <th scope="col">Vendido</th>
-                                                                        <th scope="col">Receita</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/fone.jpg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span class="text-primary fw-bold">
-                                                                                Fone de ouvido Bluetooth </a></td>
-                                                                        <td>R$ 21,90</td>
-                                                                        <td class="fw-bold">5</td>
-                                                                        <td>R$ 109,50</td>
-                                                                        span
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto2.jpeg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span class="text-primary fw-bold">Cabo USB
-                                                                                Tipo-C
-                                                                                </a></td>
-                                                                        <td>R$ 5,99</td>
-                                                                        <td class="fw-bold">5</td>
-                                                                        <td>R$ 29,95</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto3.jpg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span
-                                                                                class="text-primary fw-bold">Carregador
-                                                                                USB
-                                                                                turbo
-                                                                                </a></td>
-                                                                        <td>R$ 15,99</td>
-                                                                        <td class="fw-bold">5</td>
-                                                                        <td>R$ 79,95</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto4.jpeg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span
-                                                                                class="text-primary fw-bold">Carregador
-                                                                                Turbo Veicular</a></td>
-                                                                        <td>R$ 30,00</td>
-                                                                        <td class="fw-bold">3</td>
-                                                                        <td>R$ 90,00</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto5.webp"
-                                                                                    alt=""></a></th>
-                                                                        <td><span class="text-primary fw-bold">Smarth
-                                                                                Watch Pro Serie GI08
-                                                                                </a>
-                                                                        </td>
-                                                                        <td>R$ 119,90</td>
-                                                                        <td class="fw-bold">2</td>
-                                                                        <td>R$ 239,80</td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!-- fim top vendas -->
-                                                <!-- controle de estoques -->
-                                                <div class="col-12">
-                                                    <div class="card top-selling overflow-auto">
-
-                                                        <div class="card-body pb-0">
-                                                            <h5 class="card-title">Controle de estoque
-                                                            </h5>
-
-                                                            <table class="table table-borderless">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">Vizualização</th>
-                                                                        <th scope="col">Produto</th>
-                                                                        <th scope="col">Preço</th>
-                                                                        <th scope="col">Quantidade</th>
-                                                                        <th scope="col">Status</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/fone.jpg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span class="text-primary fw-bold">
-                                                                                Fone de ouvido Bluetooth </a></td>
-                                                                        <td>R$ 21,90</td>
-                                                                        <td class="fw-bold">2</td>
-                                                                        <td><span class="bg-warning badge">Próximo de
-                                                                                acabar</span></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto2.jpeg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span class="text-primary fw-bold">Cabo USB
-                                                                                Tipo-C
-                                                                                </a></td>
-                                                                        <td>R$ 5,99</td>
-                                                                        <td class="fw-bold">10</td>
-                                                                        <td><span class="bg-success badge">Em
-                                                                                estoque</span></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto3.jpg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span
-                                                                                class="text-primary fw-bold">Carregador
-                                                                                USB
-                                                                                turbo
-                                                                                </a></td>
-                                                                        <td>R$ 15,99</td>
-                                                                        <td class="fw-bold">1</td>
-                                                                        <td><span class="bg-warning badge">Próximo de
-                                                                                acabar</span></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto4.jpeg"
-                                                                                    alt=""></a></th>
-                                                                        <td><span
-                                                                                class="text-primary fw-bold">Carregador
-                                                                                Turbo Veicular</a></td>
-                                                                        <td>R$ 30,00</td>
-                                                                        <td class="fw-bold">0</td>
-                                                                        <td><span class="bg-danger badge"> Em
-                                                                                falta</span></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row"><a href="#"><img
-                                                                                    src="assets/images/produto5.webp"
-                                                                                    alt=""></a></th>
-                                                                        <td><span class="text-primary fw-bold">Smarth
-                                                                                Watch Pro Serie GI08
-                                                                                </a>
-                                                                        </td>
-                                                                        <td>R$ 119,90</td>
-                                                                        <td class="fw-bold">22</td>
-                                                                        <td><span class="bg-success badge">Em
-                                                                                estoque</span></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!-- fim controle de estoque -->
-                                                <!-- controle financeiro -->
-                                                <div class="col-12">
-                                                    <div class="card recent-sales overflow-auto">
-
-                                                        <div class="filter">
-                                                            <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                                                    class="bi bi-three-dots"></i></a>
-                                                            <ul
-                                                                class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-
-
-                                                                <li><a class="dropdown-item" href="#">Janeiro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Fevereiro</a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#">Março</a></li>
-                                                                <li><a class="dropdown-item" href="#">Abril</a></li>
-                                                                <li><a class="dropdown-item" href="#">Maio</a></li>
-                                                                <li><a class="dropdown-item" href="#">Junho</a></li>
-                                                                <li><a class="dropdown-item" href="#">Julho</a></li>
-                                                                <li><a class="dropdown-item" href="#">Agosto</a></li>
-                                                                <li><a class="dropdown-item" href="#">Setembro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Outubro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Novembro</a></li>
-                                                                <li><a class="dropdown-item" href="#">Dezembro</a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">Contro financeiro <span>|
-                                                                    Janeiro 2023</span>
-                                                            </h5>
-
-                                                            <table class="table table-borderless datatable">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th escope="col">Dia</th>
-                                                                        <th escope="col">Receitas</th>
-                                                                        <th escope="col">Despesas (custo produto, custo
-                                                                            do serviço, etc.)</th>
-                                                                        <th escope="col">Investimentos (min 10%)</th>
-                                                                        <th escope="col">Receita líquida</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>01</td>
-                                                                        <td>R$ 120,90</td>
-                                                                        <td>R$ 33,90</td>
-                                                                        <td>R$ 8,70</td>
-                                                                        <td>R$ 78,30</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>03</td>
-                                                                        <td>R$ 50,80</td>
-                                                                        <td>R$ 12,00</td>
-                                                                        <td>R$ 5,08</td>
-                                                                        <td>R$ 33,72</td>
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>07</td>
-                                                                        <td>R$ 22,50</td>
-                                                                        <td>R$ 5,00</td>
-                                                                        <td>R$ 1,70</td>
-                                                                        <td>R$ 15,80</td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>08</td>
-                                                                        <td>R$ 120,90</td>
-                                                                        <td>R$ 33,90</td>
-                                                                        <td>R$ 8,70</td>
-                                                                        <td>R$ 78,30</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>12</td>
-                                                                        <td>R$ 250,63</td>
-                                                                        <td>R$ 89,50 </td>
-                                                                        <td>R$ 16,11</td>
-                                                                        <td>R$ 144,39</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>15</td>
-                                                                        <td>R$ 100,63</td>
-                                                                        <td>R$ 12,50 </td>
-                                                                        <td>R$ 8,81</td>
-                                                                        <td>R$ 80,03</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>18</td>
-                                                                        <td>R$ 25,00</td>
-                                                                        <td>R$ 9,00 </td>
-                                                                        <td>R$ 1,60</td>
-                                                                        <td>R$ 14,40</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>20</td>
-                                                                        <td>R$ 88,70</td>
-                                                                        <td>R$ 23,90 </td>
-                                                                        <td>R$ 6,48</td>
-                                                                        <td>R$ 58,32</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>21</td>
-                                                                        <td>R$ 66,30</td>
-                                                                        <td>R$ 22,00 </td>
-                                                                        <td>R$ 4,30</td>
-                                                                        <td>R$ 40,00</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>22</td>
-                                                                        <td>R$ 110,00</td>
-                                                                        <td>R$ 33,50 </td>
-                                                                        <td>R$ 7,65</td>
-                                                                        <td>R$ 68,85</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>25</td>
-                                                                        <td>R$ 15,00</td>
-                                                                        <td>R$ 5,00 </td>
-                                                                        <td>R$ 1,00</td>
-                                                                        <td>R$ 9,00</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>28</td>
-                                                                        <td>R$ 250,63</td>
-                                                                        <td>R$ 89,50 </td>
-                                                                        <td>R$ 16,11</td>
-                                                                        <td>R$ 144,39</td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <td>29</td>
-                                                                        <td>R$ 200,63</td>
-                                                                        <td>R$ 72,50 </td>
-                                                                        <td>R$ 12,81</td>
-                                                                        <td>R$ 115,32</td>
-                                                                    </tr>
-
-                                                                </tbody>
-                                                            </table>
-
-
-                                                            <div class="card p-2 overflow-auto alert alert-info"
-                                                                role="alert">
-
-                                                                <table>
-                                                                    <thead>
-                                                                        <tr>
-
-
-                                                                            <th>
-                                                                                Outras Despesas (luz, água, aluguel,
-                                                                                etc.)
-                                                                            </th>
-
-
-
-                                                                            <th>
-                                                                                Receita liquida total
-                                                                            </th>
-
-
-
-                                                                            <th>
-                                                                                Investimento total
-                                                                            </th>
-
-                                                                        </tr>
-
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>R$ 500,00</td>
-                                                                            <td>R$ 380,82</td>
-                                                                            <td>R$ 88,08</td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!-- fim controle financeiro -->
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                            </section>
-                        </div>
-                        <!-- Fim navegação pessoa juridica -->
-                        <!-- Inicio navegação conhecimento -->
-                        <div class="tab-pane fade" id="profile-study">
-                            <section id="main" class="main">
-
-                                <div class="pagetitle">
-                                    <h1>Área do conhecimento</h1>
-                                </div>
-
-                                <div class="section dashboard">
-                                    <div class="row gap-2  justify-content-center">
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Gestão financeira</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 3h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
-                                            </div>
-                                            <p class="card-body">Muitos problemas de uma empresa podem ser solucionados
-                                                com
-                                                uma boa gestão
-                                                financeira. Veja neste curso como se posicionar para controlar as
-                                                finanças em seu negócio.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/gestao-financeira,7370b8a6a28bb610VgnVCM1000004c00210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Contador Parceiro: construindo o sucesso</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 48h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 75 dias</p>
-                                            </div>
-                                            <p class="card-body">Capacitar os profissionais da contabilidade para atuar
-                                                em
-                                                gestão,
-                                                empreendedorismo e inovação visando a criação de uma rede de suporte e
-                                                consultoria para os pequenos negócios. </p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/contador-parceiro-construindo-o-sucesso,af35681a0e0f8710VgnVCM100000d701210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Comunicação no processo de vendas para pequenos
-                                                negócios</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 6h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
-                                            </div>
-                                            <p class="card-body">O curso mostra a importância da comunicação no processo
-                                                de
-                                                venda e como
-                                                fazê-la da forma mais adequada ao seu negócio.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/comunicacao-no-processo-de-vendas-para-pequenos-negocios,2b77575592143810VgnVCM100000d701210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Inovação e agilidade: o futuro do empreendedorismo
-                                            </h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 20h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 30 dias</p>
-                                            </div>
-                                            <p class="card-body">A pandemia de Covid 19 acelerou de maneira imprevista a
-                                                adoção de mudanças e a digitalização dos negócios, e por isso a
-                                                necessidade desses conhecimentos aumentou exponencialmente.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/inovacao-e-agilidade-o-futuro-do-empreendedorismo,c269f07e6fb5c710VgnVCM100000d701210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Formação do preço de venda</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 8h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 30 dias</p>
-                                            </div>
-                                            <p class="card-body">Aprenda a estruturar e analisar os custos de sua
-                                                empresa para estipular o preço de venda adequado para os seus produtos
-                                                ou serviços.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/formacao-do-preco-de-venda,7490b8a6a28bb610VgnVCM1000004c00210aRCRD  "
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Marketing digital para sua empresa: reforçando sua
-                                                presença</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 6h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
-                                            </div>
-                                            <p class="card-body">Saiba como impulsionar os resultados do seu negócio
-                                                através do marketing digital.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/marketing-digital-para-sua-empresa-reforcando-sua-presenca,c0c7125576a4e710VgnVCM100000d701210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Como comprar bem e de bons fornecedores</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 2h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
-                                            </div>
-                                            <p class="card-body">Aprenda estratégias valiosas para comprar bem, adquirir
-                                                insumos de qualidade e obter preços e prazos favoráveis aos pagamentos,
-                                                aumentando a lucratividade dos seus negócios.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-comprar-bem-e-de-bons-fornecedores,0101b8a6a28bb610VgnVCM1000004c00210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Gestão de sua loja virtual em marketplace</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 2h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
-                                            </div>
-                                            <p class="card-body">Ensinará ao participante quais são os principais
-                                                aspectos da gestão de uma loja virtual em marketplaces, bem como seus
-                                                indicadores e ferramentas oferecidas pelas operadoras de marketplaces.
-                                            </p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-melhorar-a-gestao-de-sua-loja-virtual-em-marketplace,0f9beb34f5193710VgnVCM1000004c00210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-                                        <div class="card card-study">
-                                            <h3 class="card-header">Como turbinar suas vendas</h3>
-                                            <div>
-                                                <p> <i class="bi bi-alarm"></i> Duração 3h</p>
-                                                <p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
-                                            </div>
-                                            <p class="card-body">Veja neste curso que para vender é preciso conhecer os
-                                                produtos, os clientes e as necessidades do mercado.</p>
-                                            <a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-turbinar-suas-vendas,1ba0b8a6a28bb610VgnVCM1000004c00210aRCRD"
-                                                class="btn" target="_blanck">Saiba mais</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <!-- Fim navegação conhecimento -->
-    </section>
-
-
-    </div>
-    </div>
-
-    </div>
-
-    </section>
-    <footer class="footer">
-        <img class="image" src="../assets/images/logo.png" />
-        <p class="lis">© 2023 GestãoCash Brasil</p>
-        <div class="rede">
-
-            <a href="#">
-
-                <img class="face" src="../assets/images/face.png" />
-            </a>
-            <a href="#">
-
-                <img class="rede-social" src="../assets/images/twiter.png" />
-            </a>
-            <a href="#">
-
-                <img class="rede-social" src="../assets/images/youtube.png" />
-            </a>
-            <a href="#">
-
-                <img class="rede-social" src="../assets/images/insta.png" />
-            </a>
-        </div>
-
-        <a href="#">
-
-            <span>Termos de serviço</span>
-        </a>
-        <a href="contato.html">
-
-            <span>Fale conosco</span>
-        </a>
-        <a href="#">
-
-            <span>Politica de privacidade</span>
-        </a>
-        <a href="#">
-
-            <span>Condições gerais</span>
-        </a>
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-    <!-- script do Chart.js -->
-
-
-
-    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/vendor/chart.js/chart.umd.js"></script>
-    <script src="assets/vendor/echarts/echarts.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            new ApexCharts(document.querySelector("#reportsChart"), {
-                series: [{
-                    name: 'Vendas',
-                    data: [1, 3, 5, 8, 5, 2, 1],
-                }, {
-                    name: 'Receitas',
-                    data: [5.99, 17.97, 85.50, 35.50, 50, 10.90, 5.65]
-                }, {
-                    name: 'Novos Clientes',
-                    data: [1, 1, 3, 4, 1, 2, 1]
-                }],
-                chart: {
-                    height: 350,
-                    type: 'area',
-                    toolbar: {
-                        show: false
-                    },
-                },
-                markers: {
-                    size: 4
-                },
-                colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                fill: {
-                    type: "gradient",
-                    gradient: {
-                        shadeIntensity: 1,
-                        opacityFrom: 0.3,
-                        opacityTo: 0.4,
-                        stops: [0, 90, 100]
-                    }
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    curve: 'smooth',
-                    width: 2
-                },
-                xaxis: {
-                    type: 'datetime',
-                    categories: ["2023-06-01T00:00:00.000Z", "2023-06-05T01:30:00.000Z", "2023-06-10T02:30:00.000Z", "2023-06-15T03:30:00.000Z", "2023-06-18T04:30:00.000Z", "2023-06-25T05:30:00.000Z", "2023-06-26T06:30:00.000Z"]
-                },
-                tooltip: {
-                    x: {
-                        format: 'dd/MM/yy HH:mm'
-                    },
-                }
-            }).render();
-        });
-    </script>
+	<!-- Inicio header -->
+	<header>
+		<nav class="navbar navbar-expand-lg bg-transparent text-center">
+			<div class="container">
+				<a class="navbar-brand" href="/"><img src="../assets/images/logo.png" class="logo-img"
+						alt="logo gestãocash" /></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<ul class="navbar-nav gap-3 fs-5 list-items">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="/">Página inicial</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link  active" href="area-cliente">Área do cliente</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="duvidas.html">Dúvidas frequentes</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contato.html">Contato</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="sobre.html">Sobre</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/">Sair</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- fim header -->
+
+	<section class="section profile container">
+		<!-- Inicio perfil do cliente -->
+		<div class="row justify-content-center mt-3">
+			<div class="col-10 col-md-5 col-lg-4">
+
+				<div class="card">
+					<div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+						<img src="../assets/images/Squad22.png" alt="Profile" class="rounded-circle">
+						<h2>Squad 22</h2>
+						<h3>Produtos eletrônicos</h3>
+						<div class="social-links mt-2">
+							<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+							<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+							<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+							<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- Fim perfil cliente -->
+
+		<div class="col-xl-12">
+
+			<div class="card">
+				<div class="card-body pt-3">
+					<!-- Inicio navegação entre abas -->
+					<ul class="nav nav-tabs nav-tabs-bordered">
+						<li class="nav-item">
+							<button class="nav-link active" data-bs-toggle="tab"
+								data-bs-target="#profile-physical">Pessoa Física</button>
+						</li>
+
+						<li class="nav-item">
+							<button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-legal">Pessoa
+								Jurídica</button>
+						</li>
+
+						<li class="nav-item">
+							<button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-study">Área do
+								conhecimento</button>
+						</li>
+					</ul>
+					<!-- Fim navegação entre abas -->
+					<div class="tab-content pt-2">
+						<!-- Inicio navegação pessoa fisica -->
+						<div class="tab-pane fade show active profile-physical" id="profile-physical">
+							<section id="main" class="main">
+								<div class="pagetitle">
+									<h1>Pessoa Física</h1>
+									<span class="btn btn-primary" data-bs-toggle="modal"
+										data-bs-target="#modalReceita">Adicionar receita</span>
+									<span class="btn btn-danger">Adicionar despesa</span>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="modalReceita" tabindex="-1"
+									aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Receita</h1>
+											</div>
+											<div class="modal-body">
+												<form th:object="${revenue}" method="post">
+													
+													 <div class="mb-3">
+    <label for="InputData" class="form-label">Data</label>
+    <input type="date" class="form-control" id="InputData" th:field="*{data}">
+ 
+  </div>
+  <div class="mb-3">
+    <label for="InputDescricao" class="form-label">Descrição</label>
+    <input type="text" class="form-control" id="InputData" th:field="*{descricao}">
+ 
+  </div>
+  <div class="mb-3">
+    <label for="InputValor" class="form-label">Valor</label>
+    <input type="number" class="form-control" id="InputValor" th:field="*{valor}" 
+    step="0.01" maxlength="10" placeholder="109.00">
+ 	
+  </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-bs-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="section dashboard">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="row">
+												<div class="col-12">
+													<div class="card recent-sales overflow-auto">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+
+																<li><a class="dropdown-item" href="#">Janeiro</a></li>
+																<li><a class="dropdown-item" href="#">Fevereiro</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Março</a></li>
+																<li><a class="dropdown-item" href="#">Abril</a></li>
+																<li><a class="dropdown-item" href="#">Maio</a></li>
+																<li><a class="dropdown-item" href="#">Junho</a></li>
+																<li><a class="dropdown-item" href="#">Julho</a></li>
+																<li><a class="dropdown-item" href="#">Agosto</a></li>
+																<li><a class="dropdown-item" href="#">Setembro</a></li>
+																<li><a class="dropdown-item" href="#">Outubro</a></li>
+																<li><a class="dropdown-item" href="#">Novembro</a></li>
+																<li><a class="dropdown-item" href="#">Dezembro</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Controle financeiro <span>|
+																	Fevereiro 2023</span>
+															</h5>
+															<div class="pagetitle">
+																<p>Despesas:</p>
+															</div>
+
+															<table class="table table-borderless datatable">
+																<thead>
+																	<tr>
+																		<th scope="col">Dia</th>
+																		<th scope="col">Categoria</th>
+																		<th scope="col">Valor</th>
+																		<th scope="col">Fixas / Variaveis</th>
+																		<th scope="col">Observação</th>
+
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+
+																		<td>05</td>
+																		<td>Internet</td>
+																		<td>R$ 79,90</td>
+																		<td>Fixa</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td>08</td>
+																		<td>Cartão de crédito</td>
+																		<td>R$ 208,90</td>
+																		<td>Variável</td>
+																		<td>Cartão mastercard vencimento dia 10</td>
+																	</tr>
+																	<tr>
+																		<td>12</td>
+																		<td>Alimentação</td>
+																		<td>R$ 15,90</td>
+																		<td>Variável</td>
+																		<td>Almoço na rua</td>
+																	</tr>
+
+																	<tr>
+																		<td>19</td>
+																		<td>Lazer</td>
+																		<td>R$ 100,00</td>
+																		<td>Variável</td>
+																		<td>Cinema </td>
+																	</tr>
+																	<tr>
+																		<td>19</td>
+																		<td>Transporte</td>
+																		<td>R$ 50,00</td>
+																		<td>Variável</td>
+																		<td>Uber até o cinema</td>
+																	</tr>
+																	<tr>
+																		<td>21</td>
+																		<td>Conta de luz</td>
+																		<td>R$ 20,00</td>
+																		<td>Fixa</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td>28</td>
+																		<td>Mercado</td>
+																		<td>R$ 300,00</td>
+																		<td>Fixa</td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td>28</td>
+																		<td>Água</td>
+																		<td>R$ 50,00</td>
+																		<td>Fixa</td>
+																		<td></td>
+																	</tr>
+
+																</tbody>
+															</table>
+
+															<!-- gráfico de pizza-->
+															<canvas id="pieChart" class="my-5"
+																style="max-height: 400px;"></canvas>
+															<script>
+																document.addEventListener("DOMContentLoaded", () => {
+																	new Chart(document.querySelector('#pieChart'), {
+																		type: 'pie',
+																		data: {
+																			labels: [
+																				'Fixas',
+																				'Cartão de crédito',
+																				'Alimentação',
+																				'Lazer  ',
+																				'Transporte'
+																			],
+																			datasets: [{
+																				label: 'Gráfico de despesas',
+																				data: [399.90, 208.90, 15.90, 100.00, 50.00,],
+																				backgroundColor: [
+																					'rgb(255, 99, 132)',
+																					'rgb(54, 162, 235)',
+																					'rgb(255, 205, 86)',
+																					'rgb(105,89,205)',
+																					'#228B22',
+
+																				],
+																				hoverOffset: 4
+																			}]
+																		}
+																	});
+																});
+															</script>
+
+															<div class="pagetitle ">
+																<p>Ontras fontes de receita (Lembrando que sua empresa
+																	faturou R$ 380,00 no mês anterior):</p>
+															</div>
+
+															<table class="table table-borderless datatable">
+																<thead>
+																	<tr>
+																		<th scope="col">Dia</th>
+																		<th scope="col">Categoria</th>
+																		<th scope="col">Valor</th>
+																		<th scope="col">Observação</th>
+
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+
+																		<td>04</td>
+																		<td>Extra</td>
+																		<td>R$ 120,00</td>
+																		<td>Renda extra em lavagem de carros</td>
+
+																	</tr>
+
+																	<tr>
+
+																		<td>11</td>
+																		<td>Extra</td>
+																		<td>R$ 100,00</td>
+																		<td>Renda extra em lavagem de carros</td>
+
+																	</tr>
+
+																	<tr>
+
+																		<td>18</td>
+																		<td>Extra</td>
+																		<td>R$ 150,00</td>
+																		<td>Renda extra em lavagem de carros</td>
+
+																	</tr>
+
+																	<tr>
+
+																		<td>25</td>
+																		<td>Extra</td>
+																		<td>R$ 90,00</td>
+																		<td>Renda extra em lavagem de carros</td>
+
+																	</tr>
+																</tbody>
+															</table>
+
+															<div class="card p-2 overflow-auto alert alert-danger"
+																role="alert">
+
+																<table>
+																	<thead>
+																		<tr>
+																			<th>
+																				Receita Total Bruta:
+																			</th>
+																			<th>
+																				Despesa total:
+																			</th>
+																			<th>
+																				Receita Total Líquida:
+																			</th>
+																			<th>
+																				Investimentos:
+																			</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>R$ 840,40</td>
+																			<td>R$ 824,70</td>
+																			<td>R$ 15,30</td>
+																			<td>R$ 0,00</td>
+																		</tr>
+																	</tbody>
+																</table>
+
+																<h6 class="p-3 badge bg-danger"
+																	style="max-width: 200px;">*Nenhum investimento
+																	realizado</h6>
+															</div>
+
+														</div>
+
+													</div>
+												</div><!-- fim controle financeiro -->
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<canvas id="lineChart" style="max-height: 400px;"></canvas>
+								<script>
+									document.addEventListener("DOMContentLoaded", () => {
+										new Chart(document.querySelector('#lineChart'), {
+											type: 'line',
+											data: {
+												labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto'],
+												datasets: [{
+													label: 'Receita bruta anual',
+													data: [750.10, 840.40, 900.00, 850.90, 1100.00, 910.90, 779.00, 898.50],
+													fill: false,
+													borderColor: '#04347c',
+													tension: 0.1
+												}]
+											},
+											options: {
+												scales: {
+													y: {
+														beginAtZero: false
+													}
+												}
+											}
+										});
+									});
+								</script>
+							</section>
+						</div>
+						<!-- Fim navegação pessoa fisica -->
+						<!-- Inicio navegação pessoa Juridica -->
+						<div class="tab-pane fade profile-legal pt-3" id="profile-legal">
+
+							<section id="main" class="main">
+
+								<div class="pagetitle">
+									<h1>Pessoa Jurídica</h1>
+								</div>
+
+								<div class="section dashboard">
+									<div class="row">
+
+										<div class="col-lg-12">
+											<div class="row">
+
+												<!-- Card de vendas -->
+												<div class="col-lg-4">
+													<div class="card info-card sales-card">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+																<li><a class="dropdown-item" href="#">Vendas hoje</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Vendas esse
+																		mês</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Vendas esse
+																		ano</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Vendas <span>| Hoje</span></h5>
+
+															<div class="d-flex align-items-center">
+																<div
+																	class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+																	<i class="bi bi-cart"></i>
+																</div>
+																<div class="ps-3">
+																	<h6>8</h6>
+																	<span
+																		class="text-success small pt-1 fw-bold">12%</span>
+																	<span
+																		class="text-muted small pt-2 ps-1">Aumento</span>
+
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div><!-- Fim card vendas -->
+
+												<!--card de receitas -->
+												<div class="col-lg-4">
+													<div class="card info-card revenue-card">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+																<li><a class="dropdown-item" href="#">Receita hoje</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Receita esse
+																		mês</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Receita esse
+																		ano</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Receita <span>| Esse mês </span>
+															</h5>
+
+															<div class="d-flex align-items-center">
+																<div
+																	class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+																	<i class="bi bi-currency-dollar"></i>
+																</div>
+																<div class="ps-3">
+																	<h6>R$ 1250,00</h6>
+																	<span
+																		class="text-success small pt-1 fw-bold">8%</span>
+																	<span
+																		class="text-muted small pt-2 ps-1">Aumento</span>
+
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div><!-- Fim card de receitas -->
+
+												<!-- Card de clientes -->
+												<div class="col-lg-4">
+
+													<div class="card info-card customers-card">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+
+																<li><a class="dropdown-item" href="#">Hoje</a></li>
+																<li><a class="dropdown-item" href="#">Esse mÊs</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Esse ano</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Clientes <span>| Esse ano</span>
+															</h5>
+
+															<div class="d-flex align-items-center">
+																<div
+																	class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+																	<i class="bi bi-people"></i>
+																</div>
+																<div class="ps-3">
+																	<h6>150</h6>
+																	<span
+																		class="text-danger small pt-1 fw-bold">5%</span>
+																	<span
+																		class="text-muted small pt-2 ps-1">Redução</span>
+
+																</div>
+															</div>
+
+														</div>
+													</div>
+
+												</div>
+												<!-- Fim card de clientes -->
+
+												<!-- realatórios e gráficos -->
+												<div class="col-12">
+													<div class="card">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+
+																<li><a class="dropdown-item" href="#">Hoje</a></li>
+																<li><a class="dropdown-item" href="#">Esse mês</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Esse ano</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Relatórios <span>| Esse mês</span>
+															</h5>
+
+															<!-- Line Chart -->
+															<div id="reportsChart"></div>
+
+
+															<!-- End Line Chart -->
+
+														</div>
+
+													</div>
+												</div><!-- Fim relatorio -->
+
+												<!-- Vendas recentes-->
+												<div class="col-12">
+													<div class="card recent-sales overflow-auto">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+
+																<li><a class="dropdown-item" href="#">Hoje</a></li>
+																<li><a class="dropdown-item" href="#">Esse mês</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Esse ano</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Vendas recentes <span>| Hoje</span>
+															</h5>
+
+															<table class="table table-borderless datatable">
+																<thead>
+																	<tr>
+																		<th scope="col">Cód. produto</th>
+																		<th scope="col">Data</th>
+																		<th scope="col">Cliente</th>
+																		<th scope="col">Produto / Serviço</th>
+																		<th scope="col">Preço</th>
+																		<th scope="col">Status</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<th scope="row"><a href="#">#05</a></th>
+																		<td>25/08/2023</td>
+																		<td>Bruno Fernandes</td>
+																		<td><a href="#" class="text-primary">Cabo USB
+																				Tipo - C</a></td>
+																		<td>R$ 5,99</td>
+																		<td><span
+																				class="badge bg-success">Aprovado</span>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#">#15</a></th>
+																		<td>25/08/2023</td>
+																		<td>Bruno fernandes</td>
+																		<td><a href="#" class="text-primary">Carregador
+																				Celular Samsung
+																			</a></td>
+																		<td>R$ 10,00</td>
+																		<td><span
+																				class="badge bg-success">Aprovado</span>
+																		</td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#">#02</a></th>
+																		<td>25/08/2023</td>
+																		<td>Antony</td>
+																		<td><a href="#" class="text-primary"> Mini caixa
+																				de som TG-151</a></td>
+																		<td>R$ 159,90</td>
+																		<td><span
+																				class="badge bg-danger">Cancelado</span>
+																		</td>
+																	</tr>
+
+																	<tr>
+																		<th scope="row"><a href="#">#35</a></th>
+																		<td>25/08/2023</td>
+																		<td>Jadel Vieira</td>
+																		<td><a href="#" class="text-primary">
+																				Interruptor inteligente Link-532</a>
+																		</td>
+																		<td>R$ 56,90</td>
+																		<td><span
+																				class="badge bg-warning">Pendente</span>
+																		</td>
+																	</tr>
+
+																	</tr>
+																</tbody>
+															</table>
+
+														</div>
+
+													</div>
+												</div><!-- fim vendas recentes -->
+
+												<!-- Top vendas -->
+												<div class="col-12">
+													<div class="card top-selling overflow-auto">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+																<li><a class="dropdown-item" href="#">Hoje</a></li>
+																<li><a class="dropdown-item" href="#">Esse mês</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Esse ano</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body pb-0">
+															<h5 class="card-title">Mais vendidos<span> | Esse mês</span>
+															</h5>
+
+															<table class="table table-borderless">
+																<thead>
+																	<tr>
+																		<th scope="col">Vizualização</th>
+																		<th scope="col">Produto / Serviço</th>
+																		<th scope="col">Preço</th>
+																		<th scope="col">Vendido</th>
+																		<th scope="col">Receita</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/fone.jpg"
+																					alt=""></a></th>
+																		<td><span class="text-primary fw-bold">
+																				Fone de ouvido Bluetooth </a></td>
+																		<td>R$ 21,90</td>
+																		<td class="fw-bold">5</td>
+																		<td>R$ 109,50</td>
+																		span
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto2.jpeg"
+																					alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Cabo USB
+																				Tipo-C
+																				</a></td>
+																		<td>R$ 5,99</td>
+																		<td class="fw-bold">5</td>
+																		<td>R$ 29,95</td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto3.jpg"
+																					alt=""></a></th>
+																		<td><span
+																				class="text-primary fw-bold">Carregador
+																				USB
+																				turbo
+																				</a></td>
+																		<td>R$ 15,99</td>
+																		<td class="fw-bold">5</td>
+																		<td>R$ 79,95</td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto4.jpeg"
+																					alt=""></a></th>
+																		<td><span
+																				class="text-primary fw-bold">Carregador
+																				Turbo Veicular</a></td>
+																		<td>R$ 30,00</td>
+																		<td class="fw-bold">3</td>
+																		<td>R$ 90,00</td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto5.webp"
+																					alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Smarth
+																				Watch Pro Serie GI08
+																				</a>
+																		</td>
+																		<td>R$ 119,90</td>
+																		<td class="fw-bold">2</td>
+																		<td>R$ 239,80</td>
+																	</tr>
+																</tbody>
+															</table>
+
+														</div>
+
+													</div>
+												</div>
+												<!-- fim top vendas -->
+												<!-- controle de estoques -->
+												<div class="col-12">
+													<div class="card top-selling overflow-auto">
+
+														<div class="card-body pb-0">
+															<h5 class="card-title">Controle de estoque
+															</h5>
+
+															<table class="table table-borderless">
+																<thead>
+																	<tr>
+																		<th scope="col">Vizualização</th>
+																		<th scope="col">Produto</th>
+																		<th scope="col">Preço</th>
+																		<th scope="col">Quantidade</th>
+																		<th scope="col">Status</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/fone.jpg"
+																					alt=""></a></th>
+																		<td><span class="text-primary fw-bold">
+																				Fone de ouvido Bluetooth </a></td>
+																		<td>R$ 21,90</td>
+																		<td class="fw-bold">2</td>
+																		<td><span class="bg-warning badge">Próximo de
+																				acabar</span></td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto2.jpeg"
+																					alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Cabo USB
+																				Tipo-C
+																				</a></td>
+																		<td>R$ 5,99</td>
+																		<td class="fw-bold">10</td>
+																		<td><span class="bg-success badge">Em
+																				estoque</span></td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto3.jpg"
+																					alt=""></a></th>
+																		<td><span
+																				class="text-primary fw-bold">Carregador
+																				USB
+																				turbo
+																				</a></td>
+																		<td>R$ 15,99</td>
+																		<td class="fw-bold">1</td>
+																		<td><span class="bg-warning badge">Próximo de
+																				acabar</span></td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto4.jpeg"
+																					alt=""></a></th>
+																		<td><span
+																				class="text-primary fw-bold">Carregador
+																				Turbo Veicular</a></td>
+																		<td>R$ 30,00</td>
+																		<td class="fw-bold">0</td>
+																		<td><span class="bg-danger badge"> Em
+																				falta</span></td>
+																	</tr>
+																	<tr>
+																		<th scope="row"><a href="#"><img
+																					src="assets/images/produto5.webp"
+																					alt=""></a></th>
+																		<td><span class="text-primary fw-bold">Smarth
+																				Watch Pro Serie GI08
+																				</a>
+																		</td>
+																		<td>R$ 119,90</td>
+																		<td class="fw-bold">22</td>
+																		<td><span class="bg-success badge">Em
+																				estoque</span></td>
+																	</tr>
+																</tbody>
+															</table>
+
+														</div>
+
+													</div>
+												</div>
+												<!-- fim controle de estoque -->
+												<!-- controle financeiro -->
+												<div class="col-12">
+													<div class="card recent-sales overflow-auto">
+
+														<div class="filter">
+															<a class="icon" href="#" data-bs-toggle="dropdown"><i
+																	class="bi bi-three-dots"></i></a>
+															<ul
+																class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+
+
+																<li><a class="dropdown-item" href="#">Janeiro</a></li>
+																<li><a class="dropdown-item" href="#">Fevereiro</a>
+																</li>
+																<li><a class="dropdown-item" href="#">Março</a></li>
+																<li><a class="dropdown-item" href="#">Abril</a></li>
+																<li><a class="dropdown-item" href="#">Maio</a></li>
+																<li><a class="dropdown-item" href="#">Junho</a></li>
+																<li><a class="dropdown-item" href="#">Julho</a></li>
+																<li><a class="dropdown-item" href="#">Agosto</a></li>
+																<li><a class="dropdown-item" href="#">Setembro</a></li>
+																<li><a class="dropdown-item" href="#">Outubro</a></li>
+																<li><a class="dropdown-item" href="#">Novembro</a></li>
+																<li><a class="dropdown-item" href="#">Dezembro</a></li>
+															</ul>
+														</div>
+
+														<div class="card-body">
+															<h5 class="card-title">Contro financeiro <span>|
+																	Janeiro 2023</span>
+															</h5>
+
+															<table class="table table-borderless datatable">
+																<thead>
+																	<tr>
+																		<th escope="col">Dia</th>
+																		<th escope="col">Receitas</th>
+																		<th escope="col">Despesas (custo produto, custo
+																			do serviço, etc.)</th>
+																		<th escope="col">Investimentos (min 10%)</th>
+																		<th escope="col">Receita líquida</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>01</td>
+																		<td>R$ 120,90</td>
+																		<td>R$ 33,90</td>
+																		<td>R$ 8,70</td>
+																		<td>R$ 78,30</td>
+																	</tr>
+																	<tr>
+																		<td>03</td>
+																		<td>R$ 50,80</td>
+																		<td>R$ 12,00</td>
+																		<td>R$ 5,08</td>
+																		<td>R$ 33,72</td>
+
+																	</tr>
+																	<tr>
+																		<td>07</td>
+																		<td>R$ 22,50</td>
+																		<td>R$ 5,00</td>
+																		<td>R$ 1,70</td>
+																		<td>R$ 15,80</td>
+																	</tr>
+
+																	<tr>
+																		<td>08</td>
+																		<td>R$ 120,90</td>
+																		<td>R$ 33,90</td>
+																		<td>R$ 8,70</td>
+																		<td>R$ 78,30</td>
+																	</tr>
+																	<tr>
+																		<td>12</td>
+																		<td>R$ 250,63</td>
+																		<td>R$ 89,50 </td>
+																		<td>R$ 16,11</td>
+																		<td>R$ 144,39</td>
+																	</tr>
+																	<tr>
+																		<td>15</td>
+																		<td>R$ 100,63</td>
+																		<td>R$ 12,50 </td>
+																		<td>R$ 8,81</td>
+																		<td>R$ 80,03</td>
+																	</tr>
+																	<tr>
+																		<td>18</td>
+																		<td>R$ 25,00</td>
+																		<td>R$ 9,00 </td>
+																		<td>R$ 1,60</td>
+																		<td>R$ 14,40</td>
+																	</tr>
+																	<tr>
+																		<td>20</td>
+																		<td>R$ 88,70</td>
+																		<td>R$ 23,90 </td>
+																		<td>R$ 6,48</td>
+																		<td>R$ 58,32</td>
+																	</tr>
+																	<tr>
+																		<td>21</td>
+																		<td>R$ 66,30</td>
+																		<td>R$ 22,00 </td>
+																		<td>R$ 4,30</td>
+																		<td>R$ 40,00</td>
+																	</tr>
+																	<tr>
+																		<td>22</td>
+																		<td>R$ 110,00</td>
+																		<td>R$ 33,50 </td>
+																		<td>R$ 7,65</td>
+																		<td>R$ 68,85</td>
+																	</tr>
+																	<tr>
+																		<td>25</td>
+																		<td>R$ 15,00</td>
+																		<td>R$ 5,00 </td>
+																		<td>R$ 1,00</td>
+																		<td>R$ 9,00</td>
+																	</tr>
+																	<tr>
+																		<td>28</td>
+																		<td>R$ 250,63</td>
+																		<td>R$ 89,50 </td>
+																		<td>R$ 16,11</td>
+																		<td>R$ 144,39</td>
+																	</tr>
+
+																	<tr>
+																		<td>29</td>
+																		<td>R$ 200,63</td>
+																		<td>R$ 72,50 </td>
+																		<td>R$ 12,81</td>
+																		<td>R$ 115,32</td>
+																	</tr>
+
+																</tbody>
+															</table>
+
+
+															<div class="card p-2 overflow-auto alert alert-info"
+																role="alert">
+
+																<table>
+																	<thead>
+																		<tr>
+
+
+																			<th>
+																				Outras Despesas (luz, água, aluguel,
+																				etc.)
+																			</th>
+
+
+
+																			<th>
+																				Receita liquida total
+																			</th>
+
+
+
+																			<th>
+																				Investimento total
+																			</th>
+
+																		</tr>
+
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>R$ 500,00</td>
+																			<td>R$ 380,82</td>
+																			<td>R$ 88,08</td>
+																		</tr>
+																	</tbody>
+																</table>
+
+															</div>
+														</div>
+
+													</div>
+												</div>
+												<!-- fim controle financeiro -->
+
+											</div>
+										</div>
+									</div>
+
+							</section>
+						</div>
+						<!-- Fim navegação pessoa juridica -->
+						<!-- Inicio navegação conhecimento -->
+						<div class="tab-pane fade" id="profile-study">
+							<section id="main" class="main">
+
+								<div class="pagetitle">
+									<h1>Área do conhecimento</h1>
+								</div>
+
+								<div class="section dashboard">
+									<div class="row gap-2  justify-content-center">
+										<div class="card card-study">
+											<h3 class="card-header">Gestão financeira</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 3h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
+											</div>
+											<p class="card-body">Muitos problemas de uma empresa podem ser solucionados
+												com
+												uma boa gestão
+												financeira. Veja neste curso como se posicionar para controlar as
+												finanças em seu negócio.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/gestao-financeira,7370b8a6a28bb610VgnVCM1000004c00210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Contador Parceiro: construindo o sucesso</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 48h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 75 dias</p>
+											</div>
+											<p class="card-body">Capacitar os profissionais da contabilidade para atuar
+												em
+												gestão,
+												empreendedorismo e inovação visando a criação de uma rede de suporte e
+												consultoria para os pequenos negócios. </p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/contador-parceiro-construindo-o-sucesso,af35681a0e0f8710VgnVCM100000d701210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Comunicação no processo de vendas para pequenos
+												negócios</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 6h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
+											</div>
+											<p class="card-body">O curso mostra a importância da comunicação no processo
+												de
+												venda e como
+												fazê-la da forma mais adequada ao seu negócio.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/comunicacao-no-processo-de-vendas-para-pequenos-negocios,2b77575592143810VgnVCM100000d701210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Inovação e agilidade: o futuro do empreendedorismo
+											</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 20h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 30 dias</p>
+											</div>
+											<p class="card-body">A pandemia de Covid 19 acelerou de maneira imprevista a
+												adoção de mudanças e a digitalização dos negócios, e por isso a
+												necessidade desses conhecimentos aumentou exponencialmente.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/inovacao-e-agilidade-o-futuro-do-empreendedorismo,c269f07e6fb5c710VgnVCM100000d701210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Formação do preço de venda</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 8h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 30 dias</p>
+											</div>
+											<p class="card-body">Aprenda a estruturar e analisar os custos de sua
+												empresa para estipular o preço de venda adequado para os seus produtos
+												ou serviços.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/formacao-do-preco-de-venda,7490b8a6a28bb610VgnVCM1000004c00210aRCRD  "
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Marketing digital para sua empresa: reforçando sua
+												presença</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 6h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
+											</div>
+											<p class="card-body">Saiba como impulsionar os resultados do seu negócio
+												através do marketing digital.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/marketing-digital-para-sua-empresa-reforcando-sua-presenca,c0c7125576a4e710VgnVCM100000d701210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Como comprar bem e de bons fornecedores</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 2h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
+											</div>
+											<p class="card-body">Aprenda estratégias valiosas para comprar bem, adquirir
+												insumos de qualidade e obter preços e prazos favoráveis aos pagamentos,
+												aumentando a lucratividade dos seus negócios.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-comprar-bem-e-de-bons-fornecedores,0101b8a6a28bb610VgnVCM1000004c00210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Gestão de sua loja virtual em marketplace</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 2h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
+											</div>
+											<p class="card-body">Ensinará ao participante quais são os principais
+												aspectos da gestão de uma loja virtual em marketplaces, bem como seus
+												indicadores e ferramentas oferecidas pelas operadoras de marketplaces.
+											</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-melhorar-a-gestao-de-sua-loja-virtual-em-marketplace,0f9beb34f5193710VgnVCM1000004c00210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+										<div class="card card-study">
+											<h3 class="card-header">Como turbinar suas vendas</h3>
+											<div>
+												<p> <i class="bi bi-alarm"></i> Duração 3h</p>
+												<p> <i class="bi bi-calendar3"></i> Conclusão 15 dias</p>
+											</div>
+											<p class="card-body">Veja neste curso que para vender é preciso conhecer os
+												produtos, os clientes e as necessidades do mercado.</p>
+											<a href="https://www.sebrae.com.br/sites/PortalSebrae/cursosonline/como-turbinar-suas-vendas,1ba0b8a6a28bb610VgnVCM1000004c00210aRCRD"
+												class="btn" target="_blanck">Saiba mais</a>
+										</div>
+
+
+									</div>
+								</div>
+							</section>
+						</div>
+						<!-- Fim navegação conhecimento -->
+	</section>
+
+
+	</div>
+	</div>
+
+	</div>
+
+	</section>
+	<footer class="footer">
+		<img class="image" src="../assets/images/logo.png" />
+		<p class="lis">© 2023 GestãoCash Brasil</p>
+		<div class="rede">
+
+			<a href="#">
+
+				<img class="face" src="../assets/images/face.png" />
+			</a>
+			<a href="#">
+
+				<img class="rede-social" src="../assets/images/twiter.png" />
+			</a>
+			<a href="#">
+
+				<img class="rede-social" src="../assets/images/youtube.png" />
+			</a>
+			<a href="#">
+
+				<img class="rede-social" src="../assets/images/insta.png" />
+			</a>
+		</div>
+
+		<a href="#">
+
+			<span>Termos de serviço</span>
+		</a>
+		<a href="contato.html">
+
+			<span>Fale conosco</span>
+		</a>
+		<a href="#">
+
+			<span>Politica de privacidade</span>
+		</a>
+		<a href="#">
+
+			<span>Condições gerais</span>
+		</a>
+	</footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+	<!-- script do Chart.js -->
+
+
+
+	<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+	<script src="assets/vendor/chart.js/chart.umd.js"></script>
+	<script src="assets/vendor/echarts/echarts.min.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			new ApexCharts(document.querySelector("#reportsChart"), {
+				series: [{
+					name: 'Vendas',
+					data: [1, 3, 5, 8, 5, 2, 1],
+				}, {
+					name: 'Receitas',
+					data: [5.99, 17.97, 85.50, 35.50, 50, 10.90, 5.65]
+				}, {
+					name: 'Novos Clientes',
+					data: [1, 1, 3, 4, 1, 2, 1]
+				}],
+				chart: {
+					height: 350,
+					type: 'area',
+					toolbar: {
+						show: false
+					},
+				},
+				markers: {
+					size: 4
+				},
+				colors: ['#4154f1', '#2eca6a', '#ff771d'],
+				fill: {
+					type: "gradient",
+					gradient: {
+						shadeIntensity: 1,
+						opacityFrom: 0.3,
+						opacityTo: 0.4,
+						stops: [0, 90, 100]
+					}
+				},
+				dataLabels: {
+					enabled: false
+				},
+				stroke: {
+					curve: 'smooth',
+					width: 2
+				},
+				xaxis: {
+					type: 'datetime',
+					categories: ["2023-06-01T00:00:00.000Z", "2023-06-05T01:30:00.000Z", "2023-06-10T02:30:00.000Z", "2023-06-15T03:30:00.000Z", "2023-06-18T04:30:00.000Z", "2023-06-25T05:30:00.000Z", "2023-06-26T06:30:00.000Z"]
+				},
+				tooltip: {
+					x: {
+						format: 'dd/MM/yy HH:mm'
+					},
+				}
+			}).render();
+		});
+	</script>
 
 
 </body>

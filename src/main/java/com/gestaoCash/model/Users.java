@@ -1,6 +1,8 @@
 package com.gestaoCash.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -12,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -26,6 +29,17 @@ public class Users {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
 	private Address enderecoUsuario;
+	
+	@OneToMany(mappedBy = "usuario", orphanRemoval = true, cascade = CascadeType.ALL)
+	private List<Revenue> revenue = new ArrayList<Revenue>(); 
+
+	public List<Revenue> getRevenue() {
+		return revenue;
+	}
+
+	public void setRevenue(List<Revenue> revenue) {
+		this.revenue = revenue;
+	}
 
 	@Column(columnDefinition = "VARCHAR(25)")
 	private String senha;
