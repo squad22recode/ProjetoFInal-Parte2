@@ -48,7 +48,7 @@ main {
         rgb(75, 146, 250) 0%,
         rgb(57, 101, 251) 48%
     );
-    margin-top: -72px;
+    /* margin-top: -72px; */
     padding-bottom: 100px;
 }
 
@@ -69,6 +69,7 @@ main {
     font-weight: 600;
     box-shadow: 0.1em 0 0 #fff;
     margin: 2rem 1rem;
+    margin-left: 0;
     width: 20ch;
     overflow: hidden;
     white-space: nowrap;
