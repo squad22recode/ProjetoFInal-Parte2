@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <th:block th:include="fragments/head :: head"> </th:block>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="/assets/styles/clientes.css" />
+
+        <title>Gestão cash | Clientes</title>
+    </head>
+
+    <body>
+        <div th:replace="fragments/header :: header"></div>
+
+        <div class="container mt-4">
+            <header class="header-client d-flex justify-content-between p-4">
+                <h4 class="text-white fw-bold">Gerenciamento de clientes</h4>
+                <div>
+                    <a
+                        class="btn btn-danger disabled fw-bold"
+                        id="btn-deletes"
+                       disabled
+                        ><i class="fa-solid fa-circle-minus"></i> Deletar</a
+                    >
+                    <a
+                        class="btn btn-success fw-bold"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalNovoCliente"
+                        ><i class="fa-solid fa-circle-plus"></i> Adicionar novo</a
+                    >
+                </div>
+            </header>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr >
+                            <th>
+                                <div>
+                                    <input
+                                        class="form-check-input check-main"
+                                        type="checkbox"
+                                        id="checkboxNoLabel"
+                                        value=""
+                                        aria-label="..." />
+                                </div>
+                            </th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Endereco</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:data-id="${cliente.id}" th:each="cliente: ${clientes}">
+                            <td>
+                                <div>
+                                    <input
+                                        class="form-check-input "
+                                        type="checkbox"
+                                        id="checkboxNoLabel"
+                                        name="client"
+                                        th:value="${cliente.id}"
+                                        aria-label="..." />
+                                </div>
+                            </td>
+                            <td
+                                th:text="${cliente.nome}"
+                                class="client-name"></td>
+                            <td th:text="${cliente.email}"></td>
+                            <td th:text="@{${cliente.endereco.cidade} + ', ' + ${cliente.endereco.estado}}"></td>
+                            <td th:text="${cliente.telefone}"></td>
+                            <td>
+                                <a
+                                    th:href="@{'/clientes/editar/' + ${cliente.id}}"
+                                    ><i class="fa-solid fa-pen"></i
+                                ></a>
+                                <a
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal"
+                                    th:data-delete="${cliente.id}"
+                                    ><i  th:data-delete="${cliente.id}" class="fas fa-trash trash"></i
+                                ></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container-pagination d-flex justify-content-between">
+                <h6> 5 de 25</h6>
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <span class="page-link">Previous</span>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item active">
+                            <span class="page-link">
+                                2
+                                <span class="sr-only"></span>
+                            </span>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- modal -->
+        <div
+            class="modal fade"
+            id="modalNovoCliente"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            Adicionar cliente
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        <form
+                            th:object="${novoCliente}"
+                            th:action="@{/clientes/cadastro}"
+                            method="post">
+                            <div class="mb-3">
+                                <label for="InputDescricao" class="form-label"
+                                    >Nome</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="InputData"
+                                    th:field="*{nome}" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputDescricao" class="form-label"
+                                    >CPF</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="InputData"
+                                    th:field="*{cpf}" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputDescricao" class="form-label"
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="InputData"
+                                    th:field="*{email}" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputData" class="form-label"
+                                    >Data de nascimento</label
+                                >
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="InputData"
+                                    th:field="*{dataNascimento}" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputDescricao" class="form-label"
+                                    >Telefone</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="InputData"
+                                    th:field="*{telefone}" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputDescricao" class="form-label"
+                                    >Cidade</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="InputData"
+                                    th:field="*{endereco.cidade}" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputDescricao" class="form-label"
+                                    >Estado</label>
+                                    <select  class="form-select" th:field="*{endereco.estado}">
+                                        <option th:each="state: ${states}" th:value="${state.descricao}" th:text="${state.descricao}"></option>
+                                    </select>
+                                 
+                                    
+                            </div>
+                        
+                            <button type="submit" class="btn btn-primary">
+                                Salvar
+                            </button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="fragments/footer :: footer"></div>
+        
+          <!-- delete modal -->
+          <div id="deleteModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Deletar cliente</h4>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Tem certeza de que deseja excluir esse registro?</p>
+                            <p class="text-warning"><small>Essa ação não pode ser desfeita.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+                            <a class="btn btn-danger">Delete</a>
+                            
+                        </div>
+                    </form>
+                </div>
+
+          
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+            <script src="/assets/scripts/client.js"></script>
+       
+    </body>
+</html>
