@@ -24,7 +24,7 @@ public class CourseController {
     var courses = this.courseService.findAllCourse();
     model.addAttribute("cursos", courses);
 
-    return "listCourse";
+    return "";
   }
 
   @GetMapping("/novo")
@@ -32,7 +32,7 @@ public class CourseController {
     var course = new Course();
     model.addAttribute("curso", course);
 
-    return "formCourse";
+    return "";
   }
 
   @PostMapping("/save")
@@ -47,10 +47,9 @@ public class CourseController {
     var course = this.courseService.findCourseById(id);
     model.addAttribute("curso", course);
 
-    return "editCourse";
+    return "";
   }
 
-  // update
   @PostMapping("/editar/{id}")
   public String updateCourse(@ModelAttribute("curso") Course updatedCourse, @PathVariable Long id) {
     this.courseService.updateCourseById(id, updatedCourse);
@@ -58,7 +57,6 @@ public class CourseController {
     return "redirect:/cursos";
   }
 
-  // delete
   @GetMapping("/excluir/{id}")
   public String deleteCourse(@PathVariable Long id) {
     this.courseService.deleteCourseById(id);
