@@ -49,16 +49,18 @@
 				<div class="card">
 					<div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-						<img th:src="${img}"
+						<img th:src="|/usuario/imagem/${getUser.id}|"
 							alt="Profile" class="rounded-circle">
 						 <h2 th:text="${getUser.getNome()}"></h2>
 						<h3>Produtos eletrônicos</h3>
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdit">
+						<button type="button" class="btn btn-primary" >
+  <a class="link-offset-2 link-underline link-underline-opacity-0 link-light" href="../usuario/editar">
+	  
   Editar
+  </a>
 </button>
 						<div class="social-links mt-2">
-							<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-							<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+							<a th:if="${getUser.getFacebook()}" href="${getUser.getFacebook()}" class="facebook"><i class="bi bi-facebook"></i></a>
 							<a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
 							<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
 						</div>
@@ -102,8 +104,209 @@
 									<span class="btn btn-danger" data-bs-toggle="modal"
 										data-bs-target="#modalDespesa">Adicionar despesa</span>
 								</div>
-								<!-- Modal -->
+								<!-- Modal 
 							<div th:replace="~{fragments/modals :: modalEditUser }"></div>
+								-->
+								<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form
+                class="row g-3"
+                th:object="${user}"
+                th:action="@{/usuario/area-cliente/editarUsuario}"
+                method="post"
+                enctype="multipart/form-data">
+                <div class="col-md-4">
+                    <label for="inputName" class="form-label">Nome</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="inputName"
+                        required
+                        th:field="*{nome}" />
+                </div>
+                <div class="col-md-4">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="inputEmail"
+                        required
+                        th:field="*{email}" />
+                </div>
+                <div class="col-md-4">
+                    <label for="inputTel" class="form-label">Telefone</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        oninput="phone(event)"
+                        id="inputTel"
+                        maxlength="15"
+                        required
+                        th:field="*{telefone}" />
+                </div>
+                <div class="col-md-4">
+                    <label for="inputCpf" class="form-label">CPF</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        oninput="documentMask(this)"
+                        maxlength="14"
+                        id="inputCpf"
+                        required
+                        th:field="*{cpf}" />
+                </div>
+                <div class="col-md-4">
+                    <label for="inputDate" class="form-label"
+                        >Data de nascimento</label
+                    >
+                    <input
+                        type="date"
+                        class="form-control"
+                        required
+                        id="inputDate"
+                        th:field="*{dataNascimento}" />
+                </div>
+                <div class="col-md-4">
+                    <label for="inputImg" class="form-label"
+                        >Foto para perfil</label
+                    >
+                    <input
+                        type="file"
+                        class="form-control"
+                        id="inputImg"
+                        name="inputImg" />
+                </div>
+               
+                <div class="col-md-4">
+                    <label for="inputGen" class="form-label">Sexo</label>
+                    <select
+                        id="inputGen"
+                        class="form-select"
+                        th:field="*{sexo}">
+                        <option selected value="n">Selecione o sexo</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="inputAddress" class="form-label"
+                        >Endereço</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        required
+                        id="inputAddress"
+                        th:field="*{enderecoUsuario.endereco}"
+                    placeholder="Av Aberlado Bueno 135" />
+                </div>
+
+                <div class="col-3">
+                    <label for="inputAddress2" class="form-label"
+                        >Complemento</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="inputAddress2"
+                        th:field="*{enderecoUsuario.complemento}"
+                        placeholder="Apartamento, casa, lote, etc." />
+                </div>
+                <div class="col-3">
+                    <label for="inputDistrict" class="form-label">Bairro</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        required
+                        id="inputDistrict"
+                        th:field="*{enderecoUsuario.bairro}" />
+                </div>
+                <div class="col-md-3">
+                    <label for="inputCity" class="form-label">Cidade</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        required
+                        id="inputCity"
+                        th:field="*{enderecoUsuario.cidade}" />
+                </div>
+                <div class="col-md-3">
+                    <label for="inputState" class="form-label">Stado</label>
+                    <select
+                        id="inputState"
+                        class="form-select"
+                        th:field="*{enderecoUsuario.estado}">
+                        <option selected value="null">Selecione</option>
+
+                        <option
+                            th:each="state: ${states}"
+                            th:text="${state.descricao}"
+                            th:value="${state.descricao}"></option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="inputZip" class="form-label">Cep</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        onkeyup="handleZipCode(event)"
+                        required
+                        maxlength="9"
+                        id="inputZip"
+                        th:field="*{enderecoUsuario.cep}" />
+                </div>
+
+                <div class="col-md-8">
+                    <label for="inputFacebook" class="form-label"
+                        >Facebook</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="inputFacebook"
+                        th:field="*{facebook}" />
+                </div>
+                <div class="col-md-8">
+                    <label for="inputInstagram" class="form-label"
+                        >Instagram</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="inputInstagram"
+                        th:field="*{instagram}" />
+                </div>
+                <div class="col-md-8">
+                    <label for="inputLinkedin" class="form-label"
+                        >Linkedin</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="inputLinkedin"
+                        th:field="*{linkedin}" />
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 								<div class="modal fade" id="modalReceita" tabindex="-1"
 									aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
@@ -157,7 +360,7 @@
 											<div class="modal-body">
 												<form th:object="${expense}"
 													th:action="@{/usuario/area-cliente/despesa}" method="post">
-
+													<!-- <input type="hidden" th:value="${getUser.getId()}" th:field="*{usuario.id)}"> -->
 													<div class="mb-3">
 														<label for="InputData" class="form-label">Data</label>
 														<input type="date" class="form-control" id="InputData"

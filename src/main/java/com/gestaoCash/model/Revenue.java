@@ -2,7 +2,6 @@ package com.gestaoCash.model;
 
 import java.time.LocalDate;
 
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
@@ -16,67 +15,65 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.ForeignKey;
 
-
 @Table
 @Entity(name = "receita_usuario")
 public class Revenue {
 
 	@Id
-	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	@JoinColumn(foreignKey = @ForeignKey(name = "usuario_id"))
 	@ManyToOne
 	private Users usuario;
 
-@Column(columnDefinition = "VARCHAR(100)")
-  private String descricao;
+	@Column(columnDefinition = "VARCHAR(100)")
+	private String descricao;
 
-  @DateTimeFormat(iso = ISO.DATE)
-  private LocalDate data;
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate data;
 
-  public Long getId() {
-	return id;
-}
+	public Long getId() {
+		return id;
+	}
 
-public void setId(Long id) {
-	this.id = id;
-}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-public Users getUsuario() {
-	return usuario;
-}
+	public Users getUsuario() {
+		return usuario;
+	}
 
-public void setUsuario(Users usuario) {
-	this.usuario = usuario;
-}
+	public void setUsuario(Users usuario) {
+		this.usuario = usuario;
+	}
 
-public String getDescricao() {
-	return descricao;
-}
+	public String getDescricao() {
+		return descricao;
+	}
 
-public void setDescricao(String descricao) {
-	this.descricao = descricao;
-}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-public LocalDate getData() {
-	return data;
-}
+	public LocalDate getData() {
+		return data;
+	}
 
-public void setData(LocalDate data) {
-	this.data = data;
-}
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
 
-public Double getValor() {
-	return valor;
-}
+	public Double getValor() {
+		return valor;
+	}
 
-public void setValor(Double valor) {
-	this.valor = valor;
-}
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
 
-@Column(columnDefinition = "DECIMAL(10,2)")
-  private Double valor;
-
+	@Column(columnDefinition = "DECIMAL(10,2)")
+	private Double valor;
 
 }

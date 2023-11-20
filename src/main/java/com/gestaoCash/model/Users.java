@@ -28,12 +28,15 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
 	private Address enderecoUsuario;
 
-	@OneToMany(mappedBy = "usuario", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", orphanRemoval = true, cascade = CascadeType.PERSIST)
 	private List<Revenue> revenue = new ArrayList<Revenue>();
+	
+	@OneToMany(mappedBy = "usuario", orphanRemoval = true, cascade = CascadeType.PERSIST)
+	private List<Expense> expense = new ArrayList<Expense>();
 
 	// pode ser unidirecional ou bidirecional
 	// um usuario (essa classe) pode ter varias despesas (set<Expense> expenses)
@@ -42,6 +45,14 @@ public class Users {
 
 	// @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	// private List<Expense> expenses;
+
+	public List<Expense> getExpense() {
+		return expense;
+	}
+
+	public void setExpense(List<Expense> expense) {
+		this.expense = expense;
+	}
 
 	public List<Revenue> getRevenue() {
 		return revenue;
@@ -57,7 +68,7 @@ public class Users {
 	@Column(columnDefinition = "VARCHAR(5)")
 	private String tipoUsuario;
 
-	@Column(unique = true, columnDefinition = "CHAR(14)")
+	@Column( columnDefinition = "CHAR(14)")
 	private String cpf;
 
 	@Column(columnDefinition = "varchar(50)")
@@ -69,7 +80,7 @@ public class Users {
 	@Column(columnDefinition = "varchar(16)")
 	private String telefone;
 
-	@Column(unique = true, columnDefinition = "VARCHAR(50)")
+	@Column( columnDefinition = "VARCHAR(50)")
 	private String email;
 
 	@Column(columnDefinition = "longblob")

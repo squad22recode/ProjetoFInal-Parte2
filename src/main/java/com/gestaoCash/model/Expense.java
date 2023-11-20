@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,8 +26,10 @@ public class Expense {
 
   // muitas despesas( essa classe) para um usuario (private Users usuario)
   // @ManyToOne
-  @ManyToOne(cascade = CascadeType.PERSIST)
-  @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+//  @ManyToOne(cascade = CascadeType.PERSIST)
+//  @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+  @JoinColumn(foreignKey = @ForeignKey(name = "usuario_id"))
+  @ManyToOne
   private Users usuario;
 
   private String descricao;

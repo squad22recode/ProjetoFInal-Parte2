@@ -61,13 +61,21 @@
                                     >Cadastre-se</a
                                 >
                             </li>
-                            <li class="nav-item">
+                             <li class="nav-item" th:if="${getUser}">
+                                <a
+                                    class="nav-item btn btn-danger btn-sm"
+                                    href="/logout"
+                                    >Logout</a
+                                >
+                            </li>
+                            <li class="nav-item" th:if="${getUser == null}">
                                 <a
                                     class="nav-link active"
-                                    href="/usuario/entrar"
+                                    href="/login"
                                     >Login</a
                                 >
                             </li>
+                            
                         </ul>
                     </div>
                 </div>
