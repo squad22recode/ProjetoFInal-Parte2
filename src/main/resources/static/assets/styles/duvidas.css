@@ -5,53 +5,39 @@
     --cinza-escuro: #6881a5;
     --cinza-quase-branco: #c4d1e0;
 }
+header {
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav-link.active {
+    color: var(--azul-escuro);
+}
 
 section,
 main,
 footer {
     font-family: 'Roboto', sans-serif;
 }
-
 .infor {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: var(--spacer-size);
     align-items: flex-end;
-
 }
 
-/* .nav-link{
-    color: var( --cinza-quase-branco) !important;
-
-} */
-
-
-header li a {
+.nav-link {
     color: var(--cinza-quase-branco) !important;
 }
 
-header li a:hover {
-    opacity: .5;
-}
-
-.active {
-    color: var(--cinza-claro) !important;
-}
-
-.logo-img {
-    max-width: 170px;
-}
-
 .card h5 {
-    display: flex;
     margin: 0 !important;
     font-size: 40px !important;
-    color: var(--azul-escuro) !important;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
     font-weight: bold !important;
-
 }
-
 .infor-text {
     position: absolute;
     top: 30px;
@@ -60,144 +46,136 @@ header li a:hover {
 section {
     display: flex;
     flex-direction: column;
-
 }
-
 main {
     display: contents !important;
     flex-direction: column !important;
     margin-top: 30px !important;
-
 }
-
 .card {
     max-width: 100% !important;
     padding: 0 !important;
     border: 0;
-
-
 }
-
 .card-img {
-    height: 50vh !important;
     object-fit: cover;
+    height: 700px;
 }
 
 .accordion-button:not(.collapsed) {
     background: rgba((104, 129, 165, 1) 48%);
-
 }
-
-.card>div {
+.card > div {
     border: transparent !important;
     background: none !important;
     padding: 40px 30px !important;
     width: 100% !important;
-
 }
 
+.card-img-top {
+    border-radius: 20px;
+}
 .card-img-overlay {
     border: transparent !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-end !important;
     gap: 30px !important;
-
+    color: #fff !important;
 }
-
 h6 {
     padding: 30px;
-    display: flex;
-    align-items: center;
-    color: var(--azul-escuro) !important;
-    font-size: 30px;
+    margin-block: 3rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--azul-escuro);
 }
 
 h1 {
     font-size: 16px !important;
-    color: var(--azul-escuro) !important;
+
     padding: 8px 15px;
 }
-
 .card p:last-child {
     font-size: 35px;
-    color: var(--azul-escuro);
+    text-shadow: 2px 2px 4px #000000;
     font-weight: bold;
     display: flex !important;
     align-items: flex-end !important;
     max-width: fit-content;
-
 }
-
 .item-acordion {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 100%;
-    border: 0;
-    padding-bottom: 30px;
-
+    justify-content: center;
+    align-items: center;
+    width: 1100px;
+    margin: 0 auto;
+    border: 2px solid var(--cinza-quase-branco);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-block: 100px;
 }
-
-
 
 .accordion-item {
+    padding: 1rem;
     border: 0;
-
 }
-
 .accordion-item:last-of-type {
     border: 0;
-
 }
 
 .accordion {
-
-    border-radius: 15px !important;
     overflow: hidden !important;
-
+    width: 100%;
+    max-width: 1100px;
+    border-bottom: 2px solid var(--cinza-quase-branco);
 }
 
+.accordion-body {
+    font-size: 20px;
+}
+
+.accordion-button {
+    font-size: 20px;
+}
 
 .accordion-button.collapsed {
     color: var(--azul-escuro) !important;
-    font-size: 22px !important;
-
 }
-
 .img-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     gap: 20px;
     padding: 30px;
 }
 
 .img-card-fin {
     width: 200px;
-
 }
-
 .figure-image {
     width: 100%;
     object-fit: cover;
     height: 50vh;
+
     margin-top: 72px;
-
-
 }
-
 .img-card-fin {
     border: 0;
 }
 
-
-/* .footer {
-    background: rgb(4, 52, 124)0%;
-    background: linear-gradient(27deg,
-            rgba(4, 52, 124, 1) 0%,
-            rgba(104, 129, 165, 1) 48%);
+.footer {
+    background: rgb(4, 52, 124) 0%;
+    background: linear-gradient(
+        27deg,
+        rgba(4, 52, 124, 1) 0%,
+        rgba(104, 129, 165, 1) 48%
+    );
     width: 100%;
     display: flex;
     gap: 15px;
@@ -205,12 +183,9 @@ h1 {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 35px 10px;
-
 }
-
 .image {
     width: 200px;
-
 }
 
 .lis {
@@ -220,7 +195,6 @@ h1 {
     margin: 0 !important;
     max-width: 200px;
 }
-
 span {
     font-size: 13px;
     color: var(--cinza-quase-branco);
@@ -235,7 +209,6 @@ span {
     min-width: 40px;
     object-fit: cover;
 }
-
 .face {
     width: 35px;
     height: 35px;
@@ -243,73 +216,58 @@ span {
     min-width: 35px;
     object-fit: cover;
     border-radius: 50px;
-
 }
-
 .rede {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-} */
+}
 
 @media screen and (max-width: 755px) {
     h6 {
         font-size: 20px !important;
     }
-
     .card-img-top {
         width: 120px !important;
     }
-
 }
-
 @media screen and (max-width: 557px) {
     .card h5 {
         font-size: 30px !important;
     }
-
     .card p:last-child {
         font-size: 25px !important;
     }
-
 }
-
 @media screen and (max-width: 557px) {
     .card h5 {
         font-size: 30px !important;
         text-align: center !important;
     }
-
     .card p:last-child {
         font-size: 25px !important;
         text-align: center !important;
     }
-
-    .card>div {
+    .card > div {
         padding: 30px 18px !important;
     }
-
     h1 {
         display: flex !important;
     }
-
     .img-card {
         justify-content: center !important;
     }
-
     h6 {
         align-items: center !important;
     }
-
 }
-
 @media screen and (max-width: 350px) {
     .card h5 {
         font-size: 20px !important;
+
         height: 25px !important;
     }
-
     .card p:last-child {
         display: none !important;
     }
@@ -317,5 +275,4 @@ span {
     h6 {
         display: none !important;
     }
-
 }
