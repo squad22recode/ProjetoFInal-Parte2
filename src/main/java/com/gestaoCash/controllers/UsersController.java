@@ -48,43 +48,40 @@ public class UsersController {
 		return "usuario/cadastro";
 
 	}
-	
+
 	@PostMapping("/cadastro")
-	public ModelAndView cadastrar(Model model, @ModelAttribute("user") Users user, 
-			@RequestParam("inputImg") MultipartFile file,BindingResult result)
-			throws IOException{
-		
+	public ModelAndView cadastrar(Model model, @ModelAttribute("user") Users user,
+			@RequestParam("inputImg") MultipartFile file, BindingResult result)
+			throws IOException {
+
 		try {
 			user.setImagemPerfil(file.getBytes());
-			} catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		 //Users existingUser = userService.findByUserEmail(user.getEmail());
 
-//	        if(existingUser != null && existingUser.getEmail() != null && !existingUser.getEmail().isEmpty()){
-//	            result.rejectValue("email", null,
-//	                    "There is already an account registered with the same email");
-//	        }
-	        
-	        if(result.hasErrors()){
-	            model.addAttribute("user", user);
-	            ModelAndView modelAndView = new ModelAndView("/cadastro");
-	            return modelAndView;
-	        }
-		
-		
+		// Users existingUser = userService.findByUserEmail(user.getEmail());
+
+		// if(existingUser != null && existingUser.getEmail() != null &&
+		// !existingUser.getEmail().isEmpty()){
+		// result.rejectValue("email", null,
+		// "There is already an account registered with the same email");
+		// }
+
+		if (result.hasErrors()) {
+			model.addAttribute("user", user);
+			ModelAndView modelAndView = new ModelAndView("/cadastro");
+			return modelAndView;
+		}
+
 		String senhaEncriptada = SenhaUtils.encode(user.getSenha());
 		user.setSenha(senhaEncriptada);
 		user.setTipoUsuario("user");
 		userService.saveUser(user);
 		ModelAndView modelAndView = new ModelAndView("redirect:/");
-				return modelAndView;
-		
-		
-		
+		return modelAndView;
+
 	}
-		
 
 	@GetMapping("/area-cliente")
 	public ModelAndView areaDoCliente(Users user, Revenue revenue) {
@@ -97,14 +94,14 @@ public class UsersController {
 
 	@PostMapping("/area-cliente")
 	public ModelAndView areaDoCliente(@ModelAttribute("revenue") Revenue revenue) {
-		
+
 		Users user = new Users();
-		
+
 		user.setId(Long.valueOf(1));
 		revenue.setUsuario(user);
-		
-		rRepository.save(revenue);
-		
+
+		revenueService.saveRevenue(revenue);
+
 		ModelAndView modelAndView = new ModelAndView("redirect:area-do-cliente");
 		return modelAndView;
 	}
