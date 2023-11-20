@@ -51,7 +51,7 @@ public class Users {
 		this.revenue = revenue;
 	}
 
-	@Column(columnDefinition = "VARCHAR(25)")
+	@Column(columnDefinition = "VARCHAR(60)")
 	private String senha;
 
 	@Column(columnDefinition = "VARCHAR(5)")
@@ -84,6 +84,8 @@ public class Users {
 	private String linkedin;
 	@Column(columnDefinition = "VARCHAR(100)")
 	private String instagram;
+
+
 
 	public Long getId() {
 		return id;
@@ -195,6 +197,11 @@ public class Users {
 
 	public void setInstagram(String instagram) {
 		this.instagram = instagram;
+	}
+
+	public static Object withDefaultPasswordEncoder() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

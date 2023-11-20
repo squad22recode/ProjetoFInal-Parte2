@@ -1,57 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <th:block th:include="fragments/head :: head"></th:block>
 
-        <link rel="stylesheet" href="/assets/styles/user-style.css" />
-        <title>GestãoCash | Cadastrar usuário</title>
-    </head>
+<head>
+    <th:block th:include="fragments/head :: head"></th:block>
 
-    <body>
-        <div th:replace="fragments/header :: header"></div>
+    <link rel="stylesheet" href="/assets/styles/user-style.css" />
+    <title>GestãoCash | Cadastrar usuário</title>
+</head>
 
-        <section class="form-box">
-            <form class="form">
-                <span class="title">Log in</span>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-transparent text-center">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="../assets/images/logo.png" class="logo-img"
+                        alt="logo gestãocash" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav gap-3 fs-5 list-items">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Página inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="area-cliente.html">Área do cliente</a>
+                        </li>
 
-                <div class="form-container">
-                    <div class="mb-3">
-                        <label
-                            for="exampleInputEmail1"
-                            class="form-label subtitle"
-                            >Email</label
-                        >
-                        <input
-                            type="email"
-                            class="form-control"
-                            id="exampleInputEmail1"
-                            aria-describedby="emailHelp" />
-                    </div>
-                    <div class="mb-3">
-                        <label
-                            for="exampleInputPassword1"
-                            class="form-label subtitle"
-                            >Senha</label
-                        >
-                        <input
-                            type="password"
-                            class="form-control"
-                            id="exampleInputPassword1" />
-                    </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="duvidas.html">Dúvidas frequentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre.html">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadastro">Cadastre-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                    </ul>
                 </div>
-                <button>Entrar</button>
-            </form>
-            <div class="form-section">
-                <p>Esqueceu a senha? <a href="">Clique para recuperar</a></p>
             </div>
-        </section>
+        </nav>
+    </header>
+    <section class="form-box">
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form class="form" th:action="@{/login}" method="post">
+            <span class="title">Log in</span>
 
-        <div th:replace="fragments/footer :: footer"></div>
+            <div class="form-container">
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-            crossorigin="anonymous"></script>
-        <script src="../assets/scripts/scripts.js"></script>
-    </body>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label subtitle">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="username">
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label subtitle">Senha</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+            </div>
+            <button>Entrar</button>
+        </form>
+        <div class="form-section">
+            <p>Esqueceu a senha? <a href="">Clique para recuperar</a> </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <img class="image" src="../assets/images/logo.png" />
+        <p class="lis">© 2023 GestãoCash Brasil</p>
+        <div class="rede">
+
+            <a href="#">
+
+                <img class="face" src="../assets/images/face.png" />
+            </a>
+            <a href="#">
+
+                <img class="rede-social" src="../assets/images/twiter.png" />
+            </a>
+            <a href="#">
+
+                <img class="rede-social" src="../assets/images/youtube.png" />
+            </a>
+            <a href="#">
+
+                <img class="rede-social" src="../assets/images/insta.png" />
+            </a>
+        </div>
+
+        <a href="#">
+
+            <span>Termos de serviço</span>
+        </a>
+        <a href="contato.html">
+
+            <span>Fale conosco</span>
+        </a>
+        <a href="#">
+
+            <span>Politica de privacidade</span>
+        </a>
+        <a href="#">
+
+            <span>Condições gerais</span>
+        </a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="../assets/scripts/scripts.js"></script>
+</body>
+
 </html>

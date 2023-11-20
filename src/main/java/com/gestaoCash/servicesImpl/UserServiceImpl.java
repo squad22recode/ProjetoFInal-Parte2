@@ -1,8 +1,10 @@
 package com.gestaoCash.servicesImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,5 +53,17 @@ public class UserServiceImpl implements UserService {
   public void deleteUserById(Long id) {
     this.userRepository.deleteById(id);
   }
+
+@Override
+public Optional<Users> findByEmail(String email) {
+	// TODO Auto-generated method stub
+	return Optional.empty();
+}
+
+//@Override
+//public Users findByUserEmail(String email) {
+//	// TODO Auto-generated method stub
+//	return userRepository.findByUserEmail(email);
+//}
 
 }
