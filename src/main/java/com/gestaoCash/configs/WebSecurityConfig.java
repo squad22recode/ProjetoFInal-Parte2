@@ -43,8 +43,10 @@ public class WebSecurityConfig {
 							
 							authorizeConfig.requestMatchers("/").permitAll();
                             authorizeConfig.requestMatchers("usuario/cadastro").permitAll();
-							authorizeConfig.requestMatchers("login").permitAll();
-							authorizeConfig.requestMatchers("/sobre").permitAll();
+                            authorizeConfig.requestMatchers("fragments/*").permitAll();
+							authorizeConfig.requestMatchers("sobre.html").permitAll();
+							authorizeConfig.requestMatchers("contato.html").permitAll();
+							authorizeConfig.requestMatchers("duvidas.html").permitAll();
 							authorizeConfig.requestMatchers("usuario/entrar").permitAll();
 							authorizeConfig.requestMatchers("/assets/images/*").permitAll();
 							authorizeConfig.requestMatchers("/assets/styles/*").permitAll();
@@ -58,7 +60,7 @@ public class WebSecurityConfig {
 				.formLogin(form -> form
 				.loginPage("/login")
 				.loginProcessingUrl("/login")
-				.defaultSuccessUrl("/")
+				.defaultSuccessUrl("/usuario/area-cliente")
 				.permitAll())
 				.logout(logout -> logout
 						.permitAll()
@@ -73,21 +75,3 @@ public class WebSecurityConfig {
 		.passwordEncoder(passwordEncoder());
 	}
 }
-
-
-
-//@Configuration
-//@EnableWebSecurity
-//public class WebSecurityConfig{
-//	
-//	@Bean
-//	SecurityFilterChain securityFilterChain(HttpSecurity httpSec) throws Exception {
-//		return httpSec.csrf(csrf -> csrf.disable())
-//				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//				.authorizeHttpRequests(authorize -> authorize
-//						.requestMatchers(HttpMethod.POST,"/control-panel").hasRole("ADMIN")
-//						.anyRequest().authenticated())
-//				.build();
-//	}
-//	
-//}
