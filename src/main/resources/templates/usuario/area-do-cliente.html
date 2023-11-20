@@ -49,10 +49,13 @@
 				<div class="card">
 					<div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-						<img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/Squad22.png"
+						<img th:src="${img}"
 							alt="Profile" class="rounded-circle">
-						<h2>Squad 22</h2>
+						 <h2 th:text="${getUser.getNome()}"></h2>
 						<h3>Produtos eletrônicos</h3>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEdit">
+  Editar
+</button>
 						<div class="social-links mt-2">
 							<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
 							<a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -100,6 +103,7 @@
 										data-bs-target="#modalDespesa">Adicionar despesa</span>
 								</div>
 								<!-- Modal -->
+							<div th:replace="~{fragments/modals :: modalEditUser }"></div>
 								<div class="modal fade" id="modalReceita" tabindex="-1"
 									aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
@@ -173,13 +177,7 @@
 															placeholder="109.00">
 
 													</div>
-													<div class="mb-3">
-														<label for="InputValor" class="form-label">Observações</label>
-														<input type="text" class="form-control" id="InputValor"
-															th:field="*{observacao}" step="0.01" maxlength="50"
-															placeholder="109.00">
-
-													</div>
+													
 													<button type="submit" class="btn btn-primary">Salvar</button>
 												</form>
 											</div>

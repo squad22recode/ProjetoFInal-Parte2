@@ -1,10 +1,23 @@
 package com.gestaoCash.controllers;
 
+import java.awt.Image;
 import java.io.IOException;
+import java.nio.file.attribute.UserPrincipal;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
+import javax.swing.ImageIcon;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.support.Repositories;
+import org.springframework.security.authentication.TestingAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,7 +34,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.gestaoCash.enums.StateEnum;
 import com.gestaoCash.model.Expense;
 import com.gestaoCash.model.Revenue;
+import com.gestaoCash.model.UserDetailsImpl;
 import com.gestaoCash.model.Users;
+import com.gestaoCash.repositories.UserRepository;
 import com.gestaoCash.services.ExpenseService;
 import com.gestaoCash.services.RevenueService;
 import com.gestaoCash.services.UserService;
@@ -39,7 +54,8 @@ public class UsersController {
 
 	@Autowired
 	private RevenueService revenueService;
-
+	private Authentication auth;
+	
 	@GetMapping("/cadastro")
 	public String cadastrar(Model model) {
 		model.addAttribute("states", StateEnum.values());
@@ -84,32 +100,52 @@ public class UsersController {
 	}
 
 	@GetMapping("/area-cliente")
-	public ModelAndView areaDoCliente(Users user, Revenue revenue) {
-		ModelAndView modelAndView = new ModelAndView("usuario/area-do-cliente.html");
+	public ModelAndView areaDoCliente(Model model, Users user, Revenue revenue,@ModelAttribute("user") Users editUser) {
+		ModelAndView modelAndView = new ModelAndView("usuario/area-do-cliente");
 		modelAndView.addObject("expense", new Expense());
-		modelAndView.addObject("revenue", new Revenue());
-
+		modelAndView.addObject("revenue", new Revenue());	
+		
+		UserDetailsImpl dateUser = (UserDetailsImpl)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
+		Users getUser = dateUser.getDetailsLog();
+		//String img = getUser.getImagemPerfil() + ":image/png;base64," + conver;
+		
+		model.addAttribute("getUser", getUser );
+		Image img = new ImageIcon(getUser.getImagemPerfil()).getImage();
+		model.addAttribute("img", img);
 		return modelAndView;
 	}
 
 	@PostMapping("/area-cliente")
-	public ModelAndView areaDoCliente(@ModelAttribute("revenue") Revenue revenue) {
+	public ModelAndView areaDoCliente(@ModelAttribute("revenue") Revenue revenue,
+			@ModelAttribute("expense") Expense expense) {
 
 		Users user = new Users();
-
-		user.setId(Long.valueOf(1));
+		
+		//pegando os dados do usuário logado
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		UserDetailsImpl dateUser = (UserDetailsImpl) auth.getPrincipal();
+		
+		//pegando o id
+		Long id = dateUser.getDetailsLog().getId();
+		//setando o id no usuario
+		user.setId(id);
+		
+		//salvando no banco de dados
 		revenue.setUsuario(user);
+		expense.setUsuario(user);
 
 		revenueService.saveRevenue(revenue);
+		expenseService.saveExpense(expense);
 
 		ModelAndView modelAndView = new ModelAndView("redirect:area-do-cliente");
 		return modelAndView;
 	}
 
-	@PostMapping("/area-cliente/despesa")
-	public String addExpense(@ModelAttribute("expense") Expense expense) {
-		this.expenseService.saveExpense(expense);
-
-		return "redirect:/usuario/area-cliente";
-	}
+//	@PostMapping("/area-cliente/despesa")
+//	public String addExpense() {
+//		this.expenseService.saveExpense(expense);
+//
+//		return "redirect:/usuario/area-cliente";
+//	}
 }
