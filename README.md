@@ -8,13 +8,13 @@ O GestãoCash é uma aplicação para ajudar pequenos empreendedores no gerencia
 
 ## Modelagem de dados
 
-![Modelo conceitual](modelagem-dados/conceitual.png)
+![Modelo conceitual](https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/conceitual.png)
 
-![Modelo Lógico](modelagem-dados/logico.png)
+![Modelo Lógico](https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/logico.png)
 
 ## Pagina principal do projeto:
 
-![Home ](https://github.com/squad22recode/Projeto-Final/blob/main/app/assets/images/home.png?raw=true)
+![Home ](https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/home.png)
 
 ## Integrantes
 
