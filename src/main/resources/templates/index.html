@@ -2,67 +2,27 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <th:block th:include="fragments/head :: head"></th:block>
+
+    <link rel="stylesheet" href="/assets/styles/home-style.css" />
     <title>GestãoCash | Pág. Inicial</title>
-    <link rel="stylesheet" href="assets/styles/home-style.css" />
-    <link rel="stylesheet" href="assets/styles/header-footer.css">
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet" />
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-transparent text-center">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" class="logo-img"
-                        alt="logo gestãocash" /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                    <ul class="navbar-nav gap-3 fs-5 list-items">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Página inicial</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="usuario/area-cliente">Área do cliente</a>
-                        </li>
+    <div th:replace="fragments/header :: header"></div>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="duvidas.html">Dúvidas frequentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contato.html">Contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobre.html">Sobre</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link" href="usuario/cadastro">Cadastre-se</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <main>
         <section class="section-1-container container-lg">
             <div class="container-img">
-                <img id="img1" src="assets/images/image1.jpg" alt="" />
-                <img id="img2" src="assets/images/image2.jpg" alt="" />
-                <img id="img3" src="assets/images/image3.jpg" alt="" />
+                <img id="img1"
+                    src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/image1.jpg"
+                    alt="" />
+                <img id="img2"
+                    src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/image2.jpg"
+                    alt="" />
+                <img id="img3"
+                    src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/image3.jpg"
+                    alt="" />
             </div>
             <div class="text">
                 <h1>Gestão e conhecimento</h1>
@@ -104,7 +64,8 @@
                     </p>
                 </div>
                 <div class="img-section2">
-                    <img src="assets/images/grafico.png" alt="simulação grafico" />
+                    <img src="https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/grafico.png"
+                        alt="simulação grafico" />
                 </div>
             </div>
         </section>
@@ -235,46 +196,8 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <img class="image" src="assets/images/logo.png" />
-        <p class="lis">© 2023 GestãoCash Brasil</p>
-        <div class="rede">
 
-            <a href="#">
-
-                <img class="face" src="assets/images/face.png" />
-            </a>
-            <a href="#">
-
-                <img class="rede-social" src="assets/images/twiter.png" />
-            </a>
-            <a href="#">
-
-                <img class="rede-social" src="assets/images/youtube.png" />
-            </a>
-            <a href="#">
-
-                <img class="rede-social" src="assets/images/insta.png" />
-            </a>
-        </div>
-
-        <a href="#">
-
-            <span>Termos de serviço</span>
-        </a>
-        <a href="contato.html">
-
-            <span>Fale conosco</span>
-        </a>
-        <a href="#">
-
-            <span>Politica de privacidade</span>
-        </a>
-        <a href="#">
-
-            <span>Condições gerais</span>
-        </a>
-    </footer>
+    <div th:replace="fragments/footer :: footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

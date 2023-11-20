@@ -1,5 +1,7 @@
 package com.gestaoCash.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.gestaoCash.enums.StateEnum;
 import com.gestaoCash.model.Client;
 import com.gestaoCash.services.ClientService;
 
@@ -23,22 +27,21 @@ public class ClientController {
   public String listAllClient(Model model) {
     var clients = this.clientService.findAllClient();
     model.addAttribute("clientes", clients);
+    model.addAttribute("novoCliente", new Client());
+    model.addAttribute("states", StateEnum.values());
 
-    // criar a view para listar e colocar o nome da view/html no retorno
-    return "";
+    return "cliente/listar";
   }
 
-  @GetMapping("/novo")
-  public String showForm(Model model) {
-    Client client = new Client();
-    model.addAttribute("cliente", client);
-
-    // criar o form para add cliente
-    return "";
-  }
+  // @GetMapping("/novo")
+  // public String showForm(Model model) {
+  // Client client = new Client();
+  // model.addAttribute("cliente", client);
+  // return "cliente/formulario";
+  // }
 
   @PostMapping("/cadastro")
-  public String saveClient(@ModelAttribute("cliente") Client client) {
+  public String saveClient(@ModelAttribute("novoCliente") Client client) {
     this.clientService.saveClient(client);
 
     return "redirect:/clientes";
@@ -47,14 +50,13 @@ public class ClientController {
   @GetMapping("/editar/{id}")
   public String showEditForm(@PathVariable Long id, Model model) {
     var client = this.clientService.findClientById(id);
-    model.addAttribute("cliente", client);
+    model.addAttribute("editarCliente", client);
 
-    // criar o html form que mostra os dados atuais
-    return "";
+    return "cliente/editar";
   }
 
   @PostMapping("/editar/{id}")
-  public String updateClient(@ModelAttribute("cliente") Client updatedClient, @PathVariable Long id) {
+  public String updateClient(@ModelAttribute("editarCliente") Client updatedClient, @PathVariable Long id) {
     this.clientService.updateClientById(id, updatedClient);
 
     return "redirect:/clientes";
@@ -63,6 +65,15 @@ public class ClientController {
   @GetMapping("/excluir/{id}")
   public String deleteClient(@PathVariable Long id) {
     this.clientService.deleteClientById(id);
+
+    return "redirect:/clientes";
+  }
+
+  // excluir varios
+  @GetMapping("/excluir")
+  public String deleteClient(@RequestParam("ids") List<Long> ids) {
+    var idsNonNull = ids.stream().filter(id -> id != null).toList();
+    this.clientService.deleteAllClientsById(idsNonNull);
 
     return "redirect:/clientes";
   }

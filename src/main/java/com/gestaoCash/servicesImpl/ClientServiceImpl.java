@@ -60,4 +60,9 @@ public class ClientServiceImpl implements ClientService {
     this.clientRepository.deleteById(id);
   }
 
+  @Override
+  public void deleteAllClientsById(List<Long> ids) {
+    this.clientRepository.deleteAllById(ids);
+  }
+
 }

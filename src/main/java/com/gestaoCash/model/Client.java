@@ -1,12 +1,19 @@
 package com.gestaoCash.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Table(name = "cliente")
@@ -23,7 +30,8 @@ public class Client {
   @Column(columnDefinition = "varchar(50)")
   private String nome;
 
-  private Date dataNascimento;
+  @DateTimeFormat(iso = ISO.DATE)
+  private LocalDate dataNascimento;
 
   @Column(columnDefinition = "varchar(11)")
   private String telefone;
@@ -31,17 +39,16 @@ public class Client {
   @Column(unique = true, columnDefinition = "VARCHAR(50)")
   private String email;
 
-  @Column(columnDefinition = "VARCHAR(100)")
-  private String endereco;
-
-  @Column(columnDefinition = "VARCHAR(100)")
-  private String complemento;
+  @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @JoinColumn(name = "endereco_id", referencedColumnName = "id")
+  private Address endereco;
 
   public Client() {
 
   }
 
-  public Client(Long id, String cpf, String nome, Date dataNascimento, String telefone, String email, String endereco,
+  public Client(Long id, String cpf, String nome, LocalDate dataNascimento, String telefone, String email,
+      String endereco,
       String complemento) {
     this.id = id;
     this.cpf = cpf;
@@ -49,8 +56,7 @@ public class Client {
     this.dataNascimento = dataNascimento;
     this.telefone = telefone;
     this.email = email;
-    this.endereco = endereco;
-    this.complemento = complemento;
+
   }
 
   public Long getId() {
@@ -77,11 +83,11 @@ public class Client {
     this.nome = nome;
   }
 
-  public Date getDataNascimento() {
+  public LocalDate getDataNascimento() {
     return dataNascimento;
   }
 
-  public void setDataNascimento(Date dataNascimento) {
+  public void setDataNascimento(LocalDate dataNascimento) {
     this.dataNascimento = dataNascimento;
   }
 
@@ -101,24 +107,12 @@ public class Client {
     this.email = email;
   }
 
-  public String getEndereco() {
+  public Address getEndereco() {
     return endereco;
   }
 
-  public void setEndereco(String endereco) {
+  public void setEndereco(Address endereco) {
     this.endereco = endereco;
   }
-
-  public String getComplemento() {
-    return complemento;
-  }
-
-  public void setComplemento(String complemento) {
-    this.complemento = complemento;
-  }
-
-  // no momento essa foreign key está estatico, em breve será relacao entre
-  // tabelas
-  // private Long id_empresa;
 
 }

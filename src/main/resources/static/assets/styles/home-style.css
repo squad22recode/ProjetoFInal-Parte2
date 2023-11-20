@@ -21,12 +21,9 @@ header div,
     z-index: 2;
 }
 
-
 .list-items:last-child {
     margin-bottom: 71px;
 }
-
-
 
 .section-1-container {
     position: relative;
@@ -46,10 +43,12 @@ header div,
 
 main {
     background: rgb(4, 52, 124);
-    background: linear-gradient(277deg,
-            rgb(75, 146, 250) 0%,
-            rgb(57, 101, 251) 48%);
-    margin-top: -72px;
+    background: linear-gradient(
+        277deg,
+        rgb(75, 146, 250) 0%,
+        rgb(57, 101, 251) 48%
+    );
+    /* margin-top: -72px; */
     padding-bottom: 100px;
 }
 
@@ -64,30 +63,28 @@ main {
     padding: 0 20px;
 }
 
-
 .text h1 {
     color: var(--azul-escuro);
     font-size: 2rem;
     font-weight: 600;
-    box-shadow: .1em 0 0 #fff;
-  margin: 2rem 1rem;
-  width: 20ch;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: caret .5s step-end infinite alternate,
-             type 5s steps(23, end)
+    box-shadow: 0.1em 0 0 #fff;
+    margin: 2rem 1rem;
+    margin-left: 0;
+    width: 20ch;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: caret 0.5s step-end infinite alternate, type 5s steps(23, end);
 }
 
 @keyframes type {
-  0% {
-    width: 0;
-  }
-
+    0% {
+        width: 0;
+    }
 }
-@keyframes caret { 
-  50% { 
-    box-shadow: .6em 0 0 transparent;
-  }
+@keyframes caret {
+    50% {
+        box-shadow: 0.6em 0 0 transparent;
+    }
 }
 
 .text h4,
@@ -131,7 +128,7 @@ p {
     padding: 25px 0;
 }
 
-.section-2-container>div {
+.section-2-container > div {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -179,9 +176,7 @@ p {
     justify-content: center;
     gap: 45px;
     flex-wrap: wrap;
-
 }
-
 
 .card-info {
     background: transparent;
@@ -199,13 +194,12 @@ p {
     border-radius: 0;
 }
 
-.card-info>div {
+.card-info > div {
     width: 115%;
     background-color: var(--azul-claro);
     text-align: center;
     padding: 10px 0;
     border: 4px var(--cinza-quase-branco) solid;
-
 }
 
 .card-info h5 {
@@ -213,7 +207,7 @@ p {
     height: 48px;
 }
 
-.card-info>div>span {
+.card-info > div > span {
     font-size: 1rem;
     color: var(--cinza-quase-branco);
 }
@@ -227,14 +221,9 @@ p {
 .section-4-container {
     margin-top: 100px;
     min-height: 600px;
-
-
 }
 
-
-
-@media screen and (max-width:457px) {
-
+@media screen and (max-width: 457px) {
     .text h4,
     h1 {
         display: none;
@@ -306,7 +295,7 @@ p {
         padding: 0 0;
     }
 
-    .section-2-container>div {
+    .section-2-container > div {
         flex-direction: row;
     }
 
@@ -327,8 +316,7 @@ p {
     }
 
     .background-section3 {
-
-        background-image: url("../images/graficomao.jpg");
+        background-image: url('https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/graficomao.jpg');
     }
 
     .background-section3,
@@ -337,14 +325,14 @@ p {
         background-size: 100%;
         width: 100%;
         height: 500px;
-        opacity: .6;
+        opacity: 0.6;
         -webkit-box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.53);
         -moz-box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.53);
         box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.53);
     }
 
     .background-section4 {
-        background-image: url("../images/alunos.jpg");
+        background-image: url('https://raw.githubusercontent.com/squad22recode/gestaocash_imagens/main/images/alunos.jpg');
     }
 
     .section-3-container,

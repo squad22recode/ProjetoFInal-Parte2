@@ -22,9 +22,9 @@ public class ErrorPageController implements ErrorController {
 
       if (statusCode == HttpStatus.NOT_FOUND.value()) {
 
-        return "errorPages/404/404.html";
+        return "errorPages/404.html";
       } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-        return "errorPages/500/500.html";
+        return "errorPages/500.html";
       }
     }
     return "error";

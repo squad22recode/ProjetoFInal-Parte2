@@ -21,6 +21,8 @@ public class Course {
   private String url;
   private String descricao;
 
+  private boolean concluido; // Campo para indicar se o curso foi concluído
+
   public Course() {
 
   }
@@ -30,6 +32,7 @@ public class Course {
     this.nomeCurso = nomeCurso;
     this.url = url;
     this.descricao = descricao;
+    this.concluido = false; // Por padrão, ao criar um novo curso, ele não está concluído
   }
 
   public Long getId() {
@@ -64,4 +67,11 @@ public class Course {
     this.descricao = descricao;
   }
 
+  public boolean isConcluido() {
+    return concluido;
+  }
+
+  public void setConcluido(boolean concluido) {
+    this.concluido = concluido;
+  }
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <th:block th:include="fragments/head :: head"> </th:block>
+        <title>Gestão cash | Editar cliente</title>
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header"></div>
+
+        <div class="container">
+            <h1
+                class="mt-4"
+                th:text="@{'Atualizar | ' +  ${editarCliente.nome}}"></h1>
+            <form
+                th:object="${editarCliente}"
+                th:action="@{'/clientes/editar/' + ${editarCliente.id}}"
+                method="post">
+                <div class="mb-3">
+                    <label for="InputDescricao" class="form-label">Nome</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="InputData"
+                        th:field="*{nome}" />
+                </div>
+                <div class="mb-3">
+                    <label for="InputDescricao" class="form-label">CPF</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="InputData"
+                        th:field="*{cpf}" />
+                </div>
+                <div class="mb-3">
+                    <label for="InputDescricao" class="form-label">Email</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="InputData"
+                        th:field="*{email}" />
+                </div>
+                <div class="mb-3">
+                    <label for="InputData" class="form-label"
+                        >Data de nascimento</label
+                    >
+                    <input
+                        type="date"
+                        class="form-control"
+                        id="InputData"
+                        th:field="*{dataNascimento}" />
+                </div>
+                <div class="mb-3">
+                    <label for="InputDescricao" class="form-label"
+                        >Telefone</label
+                    >
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="InputData"
+                        th:field="*{telefone}" />
+                </div>
+                <div class="mb-3">
+                    <label for="InputDescricao" class="form-label"
+                        >Cidade</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="InputData"
+                        th:field="*{endereco.cidade}" />
+                </div>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <a class="btn btn-secondary" href="/clientes">Cancelar</a>
+            </form>
+        </div>
+    </body>
+</html>
