@@ -1,9 +1,11 @@
 package com.gestaoCash.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.gestaoCash.model.Users;
 
-public interface UserRepository extends JpaRepository<Users, Long>{
+@Repository
+public interface UserRepository extends JpaRepository<Users, Long> {
 
 }
