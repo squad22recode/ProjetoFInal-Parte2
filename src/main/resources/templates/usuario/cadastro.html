@@ -184,7 +184,7 @@
                         class="form-control"
                         required
                         id="inputAddress"
-                        th:field="*{enderecoUsuario.endereco}" />
+                        th:field="*{enderecoUsuario.endereco}"
                     placeholder="Av Aberlado Bueno 135" />
                 </div>
 
@@ -280,6 +280,12 @@
                     </button>
                 </div>
             </form>
+            <div th:if="${sucesso}">
+				
+			</div>
+			<div th:if="${error}">
+				
+			</div>
         </section>
         <footer class="footer">
             <img class="image" src="../assets/images/logo.png" />

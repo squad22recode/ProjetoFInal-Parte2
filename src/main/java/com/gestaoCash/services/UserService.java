@@ -1,6 +1,10 @@
 package com.gestaoCash.services;
 
 import java.util.List;
+import java.util.Optional;
+
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.gestaoCash.model.Users;
 
 public interface UserService {
@@ -13,4 +17,8 @@ public interface UserService {
   void updateUserById(Long id, Users updatedUser);
 
   void deleteUserById(Long id);
+  
+  Optional<Users> findByEmail(String email);
+  
+ 
 }

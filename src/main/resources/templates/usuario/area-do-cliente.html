@@ -66,7 +66,9 @@
 							<a class="nav-link" href="sobre.html">Sobre</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/">Sair</a>
+							<form th:action="@{/logout}" method="post">
+            <button class="btn btn-outline-danger btn-sm" type="submit">Sair</button>
+        </form>
 						</li>
 					</ul>
 				</div>
@@ -141,7 +143,7 @@
 											</div>
 											<div class="modal-body">
 												<form th:object="${revenue}" method="post">
-													
+													 
 													 <div class="mb-3">
     <label for="InputData" class="form-label">Data</label>
     <input type="date" class="form-control" id="InputData" th:field="*{data}">

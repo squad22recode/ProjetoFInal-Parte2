@@ -50,7 +50,7 @@
 							<a class="nav-link" href="cadastro">Cadastre-se</a>
 						</li>
 						<li class="nav-item">
-                            <a class="nav-link" href="entrar">Login</a>
+                            <a class="nav-link" href="login">Login</a>
                         </li>
 					</ul>
 				</div>
@@ -58,19 +58,25 @@
 		</nav>
 	</header>
 	<section class="form-box">
-<form class="form">
+		<div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+<form class="form" th:action="@{/login}" method="post">
     <span class="title">Log in</span>
  
     <div class="form-container">
       
 			<div class="mb-3">
     <label for="exampleInputEmail1" class="form-label subtitle">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
     
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label subtitle">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
   </div>
     </div>
     <button>Entrar</button>
