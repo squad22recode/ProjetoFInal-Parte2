@@ -2,9 +2,8 @@ package com.gestaoCash.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -12,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -197,13 +196,5 @@ public class Users {
 	public void setInstagram(String instagram) {
 		this.instagram = instagram;
 	}
-
-	// public Set<Expense> getExpenses() {
-	// return expenses;
-	// }
-
-	// public void setExpenses(Set<Expense> expenses) {
-	// this.expenses = expenses;
-	// }
 
 }
