@@ -28,7 +28,25 @@ public class Revenue {
 	private Users usuario;
 
 	@Column(columnDefinition = "VARCHAR(100)")
-	private String descricao;
+	private String categoria;
+	
+	private String observacao;
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
 
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate data;
@@ -49,13 +67,7 @@ public class Revenue {
 		this.usuario = usuario;
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
 
 	public LocalDate getData() {
 		return data;

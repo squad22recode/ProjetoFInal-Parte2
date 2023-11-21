@@ -10,6 +10,7 @@ public interface RevenueService {
   List<Revenue> findAllRevenues();
 
   Revenue findRevenueById(Long id);
+  
 
   void updateRevenueById(Long id, Revenue updatedRevenue);
 

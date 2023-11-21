@@ -32,9 +32,17 @@ public class Expense {
   @ManyToOne
   private Users usuario;
 
-  private String descricao;
+  private String categoria;
 
-  @DateTimeFormat(iso = ISO.DATE)
+  public String getCategoria() {
+	return categoria;
+}
+
+public void setCategoria(String categoria) {
+	this.categoria = categoria;
+}
+
+@DateTimeFormat(iso = ISO.DATE)
   private LocalDate data;
 
   private String observacao;
@@ -58,13 +66,7 @@ public class Expense {
     this.usuario = usuario;
   }
 
-  public String getDescricao() {
-    return descricao;
-  }
 
-  public void setDescricao(String descricao) {
-    this.descricao = descricao;
-  }
 
   public LocalDate getData() {
     return data;

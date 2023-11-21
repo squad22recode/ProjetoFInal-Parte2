@@ -4,8 +4,12 @@ import java.awt.Image;
 import java.io.IOException;
 import java.nio.file.attribute.UserPrincipal;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import javax.swing.ImageIcon;
@@ -14,6 +18,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.support.Repositories;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.authentication.TestingAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -42,6 +47,8 @@ import com.gestaoCash.model.Expense;
 import com.gestaoCash.model.Revenue;
 import com.gestaoCash.model.UserDetailsImpl;
 import com.gestaoCash.model.Users;
+import com.gestaoCash.repositories.ExpenseRespository;
+import com.gestaoCash.repositories.RevenueRepository;
 import com.gestaoCash.repositories.UserRepository;
 import com.gestaoCash.services.ExpenseService;
 import com.gestaoCash.services.RevenueService;
@@ -58,6 +65,12 @@ public class UsersController {
 
 	@Autowired
 	UserRepository userepo;
+	
+	@Autowired
+	ExpenseRespository expRepo;
+	
+	@Autowired
+	private RevenueRepository revRepo;
 
 	@Autowired
 	private ExpenseService expenseService;
@@ -141,8 +154,16 @@ public class UsersController {
 		model.addAttribute("getUser", getUser);
 		Image img = new ImageIcon(getUser.getImagemPerfil()).getImage();
 		model.addAttribute("img", img);
-
-		return modelAndView;
+		
+		//List<Revenue> revenues = revRepo.findRevenueByUser(data.DataUser().getId()); 
+	
+		List<Revenue> revenues = revRepo.findAll();		
+				
+		List<Expense> exps = expRepo.findAll();
+		
+		model.addAttribute("exps",exps);
+		model.addAttribute("revs", revenues);
+;		return modelAndView;
 	}
 
 	@PostMapping("/area-cliente")
